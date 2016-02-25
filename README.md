@@ -9,4 +9,4 @@ Arduino libraries and sketches
 
 
 ### Colorduino RGB matrix driver
-* see [wiki](http://github.com/pacodelgado/ardunio/wiki/Colorduino) for detailed information
+* see [wiki](https://github.com/pacodelgado/arduino/wiki/Colorduino) for detailed information
