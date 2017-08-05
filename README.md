@@ -1,6 +1,11 @@
 # arduino
 Arduino libraries and sketches
 
+## Libraries
+### JLed
+JLed is an Arduino library to control LEDs. It uses a non-blocking approach and can control LEDs in simple (on/off) and complex (blinking, breathing) ways in a time-driven manner.
+
+* https://github.com/jandelgado/jled
 
 ## Sketches
 ### interfacing SSD1306 based OLED displays (SPI)
