@@ -50,7 +50,7 @@ Driver for 8x8 RGB LED matrix.
 * see [wiki](https://github.com/jandelgado/arduino/wiki/Colorduino) for detailed information
 
 
-### CMJMCU-8x8 RGB matix
+### CJMCU-8x8 RGB matix
 
 An 8x8 LED RGB matrix based on WS2812 "NeoPixels".
 
