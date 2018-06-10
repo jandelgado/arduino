@@ -22,7 +22,7 @@ A lightweight, no-frills logging library for Arduino & friends.
 
 ### Interfacing SSD1306 based OLED displays (SPI)
 
-![ssd1306](images/ssd1306.jpg)
+<img alt="ssd1306" width=256 src="images/ssd1306.jpg">
 
 * [ssd1306_sample_adafruit](ssd1306_sample_adafruit) - sample code for ssd1306 based oled display. see [wiki](http://github.com/jandelgado/arduino/wiki/SSD1306-based-OLED-connected-to-Arduino) for detailed information
 * [ssd1306_sample_u8g](ssd1306_sample_u8g) - sample code for ssd1306 based oled display. see [wiki](http://github.com/jandelgado/arduino/wiki/SSD1306-based-OLED-connected-to-Arduino) for detailed information
@@ -32,7 +32,7 @@ A lightweight, no-frills logging library for Arduino & friends.
 
 Driver for 8x8 RGB LED matrix.
 
-![Colorduino](images/colorduino.JPG)
+<img alt="Colorduino" width=256 src="images/colorduino.JPG">
 
 * see [wiki](https://github.com/jandelgado/arduino/wiki/Colorduino) for detailed information
 
@@ -41,6 +41,6 @@ Driver for 8x8 RGB LED matrix.
 
 An 8x8 LED RGB matrix based on WS2812 "NeoPixels".
 
-![CJMCU-8*8](images/cjmcu-8x8/cjmcu.jpg)
+<img alt="CJMCU-8*8" width=256 src="images/cjmcu-8x8/cjmcu.jpg">
 
-* see [README of example sketch](cjmcu8x8_sample/README.md) for detailed information.
+* see [README of example sketch](cjmcu_8x8_sample/README.md) for detailed information.
