@@ -1,6 +1,19 @@
 # arduino
 
-Arduino libraries and sketches
+Arduino libraries and sketches.
+
+
+<!-- vim-markdown-toc GFM -->
+
+* [Libraries](#libraries)
+    * [JLed](#jled)
+    * [log4arduino](#log4arduino)
+* [Sketches](#sketches)
+    * [Interfacing SSD1306 based OLED displays (SPI)](#interfacing-ssd1306-based-oled-displays-spi)
+    * [Colorduino RGB matrix driver](#colorduino-rgb-matrix-driver)
+    * [CMJMCU-8x8 RGB matix](#cmjmcu-8x8-rgb-matix)
+
+<!-- vim-markdown-toc -->
 
 ## Libraries
 
