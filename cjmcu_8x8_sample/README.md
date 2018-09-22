@@ -2,7 +2,7 @@
 
 <img alt="CJMCU-8*8" width=480 src="../images/cjmcu-8x8/cjmcu.jpg">
 
-I recently got some of those `CMCJU-8*8` labeled LED RGB Matrix boards.
+I recently got some of those `CJMCU-8*8` labeled LED RGB Matrix boards.
 According to what is printed on the boards, they are opposed to be built
 up on `WS2812B` RGB "Neopixel" LEDs. Connecting the matrix to an Arduino however,
 I had no luck at all on my first attempt. Later I found that these PCBs were
