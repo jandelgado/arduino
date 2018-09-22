@@ -11,7 +11,7 @@ Arduino libraries and sketches.
 * [Sketches](#sketches)
     * [Interfacing SSD1306 based OLED displays (SPI)](#interfacing-ssd1306-based-oled-displays-spi)
     * [Colorduino RGB matrix driver](#colorduino-rgb-matrix-driver)
-    * [CMJMCU-8x8 RGB matix](#cmjmcu-8x8-rgb-matix)
+    * [CJMCU-8x8 RGB matix](#cjmcu-8x8-rgb-matix)
 
 <!-- vim-markdown-toc -->
 
@@ -23,11 +23,18 @@ JLed is an Arduino library to control LEDs. It uses a non-blocking approach and
 can control LEDs in simple (on/off) and complex (blinking, breathing) ways in a
 time-driven manner.
 
+<img alt="jled" width=256 src="images/jled.gif">
+
 * https://github.com/jandelgado/jled
 
 ### log4arduino
 
 A lightweight, no-frills logging library for Arduino & friends.
+
+```c++
+LOG("hello, log4arduino.");
+LOG("use %s formatting: %d %c %d %c %d", "printf", 9, '+', 1, '=', 10);
+```
 
 * https://github.com/jandelgado/log4arduino
 
