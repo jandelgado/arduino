@@ -12,6 +12,7 @@ Arduino libraries and sketches.
     * [Interfacing SSD1306 based OLED displays (SPI)](#interfacing-ssd1306-based-oled-displays-spi)
     * [Colorduino RGB matrix driver](#colorduino-rgb-matrix-driver)
     * [CJMCU-8x8 RGB matix](#cjmcu-8x8-rgb-matix)
+    * [WEMOS D-Duino](#wemos-d-duino)
 
 <!-- vim-markdown-toc -->
 
@@ -63,4 +64,13 @@ An 8x8 LED RGB matrix based on WS2812 "NeoPixels".
 
 <img alt="CJMCU-8*8" width=256 src="images/cjmcu-8x8/cjmcu.jpg">
 
-* see [README of example sketch](cjmcu_8x8_sample/README.md) for detailed information.
+### WEMOS D-Duino
+
+The Wemos D-Duino is a ESP8266 board with an integrated SSD1306 OLED display
+connected via I2C. 
+
+<img alt="wemos-d-duino" width=256 src="images/wemos-d-duino.png">
+
+* see [example sketch](wemos_d_duino) for an example on how to use it with 
+  the u8g2 library.
+
