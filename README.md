@@ -13,6 +13,7 @@ Arduino libraries and sketches.
     * [Colorduino RGB matrix driver](#colorduino-rgb-matrix-driver)
     * [CJMCU-8x8 RGB matix](#cjmcu-8x8-rgb-matix)
     * [WEMOS D-Duino](#wemos-d-duino)
+    * [ESP32 TTGO](#esp32-ttgo)
 
 <!-- vim-markdown-toc -->
 
@@ -66,11 +67,27 @@ An 8x8 LED RGB matrix based on WS2812 "NeoPixels".
 
 ### WEMOS D-Duino
 
-The Wemos D-Duino is a ESP8266 board with an integrated SSD1306 OLED display
+The Wemos D-Duino is an ESP8266 board with an integrated SSD1306 OLED display
 connected via I2C. 
 
 <img alt="wemos-d-duino" width=256 src="images/wemos-d-duino.png">
 
+* SSD1306 is connected with I2C and SCL connected to D2 and SDA connected
+  to D1.
 * see [example sketch](wemos_d_duino) for an example on how to use it with 
+  the u8g2 library.
+
+### ESP32 TTGO
+
+The ESP32 TTGO is an EPS32 with an integrated SSD1306 OLED display connected
+via I2C. The board also has a 18650 battery holder on the back, and and on-off
+switch.
+
+<img alt="esp32-ttgo" width=256 src="images/esp32-ttgo.png">
+<img alt="esp32-ttgo-back" width=256 src="images/esp32-ttgo-back.png">
+
+* SSD1306 is connected with I2C and SCL connected to GPIO4 and SDA connected
+  to GPIO5.
+* see [example sketch](esp32_ttgo) for an example on how to use it with 
   the u8g2 library.
 
