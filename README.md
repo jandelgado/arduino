@@ -65,6 +65,9 @@ An 8x8 LED RGB matrix based on WS2812 "NeoPixels".
 
 <img alt="CJMCU-8*8" width=256 src="images/cjmcu-8x8/cjmcu.jpg">
 
+* see [README of example sketch](cjmcu_8x8_sample/README.md) for detailed info
+rmation.
+
 ### WEMOS D-Duino
 
 The Wemos D-Duino is an ESP8266 board with an integrated SSD1306 OLED display
