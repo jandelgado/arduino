@@ -14,6 +14,7 @@ Arduino libraries and sketches.
     * [CJMCU-8x8 RGB matix](#cjmcu-8x8-rgb-matix)
     * [WEMOS D-Duino](#wemos-d-duino)
     * [ESP32 TTGO](#esp32-ttgo)
+    * [Heltec WiFi Lora 32](#heltec-wifi-lora-32)
 
 <!-- vim-markdown-toc -->
 
@@ -93,4 +94,16 @@ switch.
   to GPIO5.
 * see [example sketch](esp32_ttgo) for an example on how to use it with 
   the u8g2 library.
+
+### Heltec WiFi Lora 32
+
+The Heltec Wifi Lora 32 is an ESP32 board with builtin OLED display and LORA
+transceiver.
+
+<img alt="heltec-wifi-lora-32" width=256 src="images/heltec.jpg">
+
+* the builtin LED is connected to `GPIO 25` (e.g. use `digitalWrite(25, 255)`) 
+  and low active.
+* OLED: u8glib configuration `U8X8_SSD1306_128X64_NONAME_SW_I2C u8x8(/* clock=*/ 15, /* data=*/ 4, /* reset=*/ 16);`
+* more to come
 
