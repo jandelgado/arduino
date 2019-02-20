@@ -36,7 +36,15 @@ A lightweight, no-frills logging library for Arduino & friends.
 
 ```c++
 LOG("hello, log4arduino.");
+delay(42);
 LOG("use %s formatting: %d %c %d %c %d", "printf", 9, '+', 1, '=', 10);
+```
+
+Allows simple printf-like formatting and shows current time in millis and available memory, e.g.
+
+```
+0(1623): hello, log4arduino.
+42(1609): use printf formatting: 9 + 1 = 10
 ```
 
 * https://github.com/jandelgado/log4arduino
@@ -97,13 +105,13 @@ switch.
 
 ### Heltec WiFi Lora 32
 
-The Heltec Wifi Lora 32 is an ESP32 board with builtin OLED display and LORA
+The Heltec Wifi Lora 32 is an ESP32 board with a builtin OLED display and LORA
 transceiver.
 
 <img alt="heltec-wifi-lora-32" width=256 src="images/heltec.jpg">
 
 * the builtin LED is connected to `GPIO 25` (e.g. use `digitalWrite(25, 255)`) 
-  and low active.
+  and is low active.
 * OLED: u8glib configuration `U8X8_SSD1306_128X64_NONAME_SW_I2C u8x8(/* clock=*/ 15, /* data=*/ 4, /* reset=*/ 16);`
 * more to come
 
