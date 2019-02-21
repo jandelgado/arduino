@@ -1,3 +1,5 @@
 *~
+.pioenvs/
+.piolibdeps/
 libraries
 libraries/*

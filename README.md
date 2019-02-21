@@ -51,6 +51,16 @@ Allows simple printf-like formatting and shows current time in millis and availa
 
 ## Sketches
 
+To build the demo sketches you can either copy the folders to the source 
+folder of your Arduino IDE or use PlatformIO and the provided makefiles, e.g.:
+
+```
+$ cd cjmcu_8x8_sample
+$ make upload
+```
+
+The following make targets can be used: run, envdump, clean, upload, monitor
+
 ### Interfacing SSD1306 based OLED displays (SPI)
 
 <img alt="ssd1306" width=256 src="images/ssd1306.jpg">
@@ -113,5 +123,6 @@ transceiver.
 * the builtin LED is connected to `GPIO 25` (e.g. use `digitalWrite(25, 255)`) 
   and is low active.
 * OLED: u8glib configuration `U8X8_SSD1306_128X64_NONAME_SW_I2C u8x8(/* clock=*/ 15, /* data=*/ 4, /* reset=*/ 16);`
-* more to come
+* see [example sketch](heltec_wifi_lora32) for an example on how to use the OLED
+* will add Lora example later ...
 
