@@ -1,7 +1,6 @@
-# arduino
+# Arduino
 
-Arduino libraries and sketches.
-
+Notes on Arduino libraries and sketches and other related stuff.
 
 <!-- vim-markdown-toc GFM -->
 
@@ -15,6 +14,7 @@ Arduino libraries and sketches.
     * [WEMOS D-Duino](#wemos-d-duino)
     * [ESP32 TTGO](#esp32-ttgo)
     * [Heltec WiFi Lora 32](#heltec-wifi-lora-32)
+    * [Raspberry Pi 480x320 SPI TFT Display](#raspberry-pi-480x320-spi-tft-display)
 
 <!-- vim-markdown-toc -->
 
@@ -124,5 +124,45 @@ transceiver.
   and is low active.
 * OLED: u8glib configuration `U8X8_SSD1306_128X64_NONAME_SW_I2C u8x8(/* clock=*/ 15, /* data=*/ 4, /* reset=*/ 16);`
 * see [example sketch](heltec_wifi_lora32) for an example on how to use the OLED
-* will add Lora example later ...
+* TODO will add Lora example later ...
+
+### Raspberry Pi 480x320 SPI TFT Display
+
+TODO images
+
+The display uses a `ILI9486` controller. In raspian, it is configured as 
+follows:
+
+Add to `/boot/config.txt`:
+```
+dtparam=spi=on
+dtoverlay=piscreen,speed=16000000,rotate=90,fps=20
+```
+
+After reboot, check with `dmesg` that the driver was loaded (framebuffer and
+touchscreen):
+```
+ 12.814215] ads7846 spi0.1: touchscreen, irq 169
+[   12.815503] input: ADS7846 Touchscreen as /devices/platform/soc/3f204000.spi/spi_master/spi0/spi0.1/input/input0
+[   12.839795] fbtft: module is from the staging directory, the quality is unknown, you have been warned.
+[   12.852267] fb_ili9486: module is from the staging directory, the quality is unknown, you have been warned.
+[   12.853073] fbtft_of_value: regwidth = 16
+[   12.853083] fbtft_of_value: buswidth = 8
+[   12.853092] fbtft_of_value: debug = 0
+[   12.853098] fbtft_of_value: rotate = 90
+[   12.853105] fbtft_of_value: fps = 20
+...
+[   13.613788] graphics fb1: fb_ili9486 frame buffer, 480x320, 300 KiB video memory, 4 KiB buffer memory, fps=20, spi0.0 at 16 MHz
+```
+
+Test the display by loading an image using the `fbi` tool:
+```
+$ sudo fbi -noverbose -T 1 -a -d /dev/fb1 image-test.gif
+```
+
+(sudo is needed when command is run from ssh session).
+
+Start X11 on the framebuffer with `sudo FBDEV=/dev/fb1 startx`.
+
+
 
