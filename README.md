@@ -170,6 +170,7 @@ Start X11 on the framebuffer with `sudo FBDEV=/dev/fb1 startx`.
 
 #### Further info
 
+* http://ozzmaker.com/piscreen-driver-install-instructions-2/
 * [Adafruit info on FPS and SPI speed](https://learn.adafruit.com/adafruit-pitft-28-inch-resistive-touchscreen-display-raspberry-pi/help-faq#faq-11)
 * RPi case used: https://www.thingiverse.com/thing:1229473
 
