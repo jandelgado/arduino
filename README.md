@@ -142,9 +142,9 @@ dtparam=spi=on
 dtoverlay=piscreen,speed=16000000,rotate=270,fps=20
 ```
 
-(note that the 20 fps are not reached, see 
-After reboot, check with `dmesg` that the driver was loaded (framebuffer and
-touchscreen):
+(note that the 20 fps are not reached), After reboot, check with `dmesg` that
+the driver was loaded (framebuffer and touchscreen):
+
 ```
  12.814215] ads7846 spi0.1: touchscreen, irq 169
 [   12.815503] input: ADS7846 Touchscreen as /devices/platform/soc/3f204000.spi/spi_master/spi0/spi0.1/input/input0
