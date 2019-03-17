@@ -14,7 +14,8 @@ Notes on Arduino libraries and sketches and other related stuff.
     * [WEMOS D-Duino](#wemos-d-duino)
     * [ESP32 TTGO](#esp32-ttgo)
     * [Heltec WiFi Lora 32](#heltec-wifi-lora-32)
-    * [Raspberry Pi 480x320 SPI TFT Display](#raspberry-pi-480x320-spi-tft-display)
+    * [Raspberry Pi 480x320 SPI TFT Display (3.5 inches)](#raspberry-pi-480x320-spi-tft-display-35-inches)
+        * [Further info](#further-info)
 
 <!-- vim-markdown-toc -->
 
@@ -126,19 +127,22 @@ transceiver.
 * see [example sketch](heltec_wifi_lora32) for an example on how to use the OLED
 * TODO will add Lora example later ...
 
-### Raspberry Pi 480x320 SPI TFT Display
+### Raspberry Pi 480x320 SPI TFT Display (3.5 inches)
 
-TODO images
+<img alt="RPi SPI display 480x320" width=256 src="images/rpi_tft_35.jpg">
+<img alt="RPi SPI display 480x320 demo" width=256 src="images/rpi_tft_35_demo.jpg">
 
-The display uses a `ILI9486` controller. In raspian, it is configured as 
-follows:
+The display is labeled with `RPi Display 480x320 Pixel XPT246 Touch Controller`
+and uses an `ILI9486` controller. In raspian (tested with `2018-11-13 Raspian`). 
+no additional drivers are needed. I got it running with the following configuration:
 
 Add to `/boot/config.txt`:
 ```
 dtparam=spi=on
-dtoverlay=piscreen,speed=16000000,rotate=90,fps=20
+dtoverlay=piscreen,speed=16000000,rotate=270,fps=20
 ```
 
+(note that the 20 fps are not reached, see 
 After reboot, check with `dmesg` that the driver was loaded (framebuffer and
 touchscreen):
 ```
@@ -164,5 +168,9 @@ $ sudo fbi -noverbose -T 1 -a -d /dev/fb1 image-test.gif
 
 Start X11 on the framebuffer with `sudo FBDEV=/dev/fb1 startx`.
 
+#### Further info
+
+* [Adafruit info on FPS and SPI speed](https://learn.adafruit.com/adafruit-pitft-28-inch-resistive-touchscreen-display-raspberry-pi/help-faq#faq-11)
+* RPi case used: https://www.thingiverse.com/thing:1229473
 
 
