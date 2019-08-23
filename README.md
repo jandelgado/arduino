@@ -7,6 +7,7 @@ Notes on Arduino libraries and sketches and other related stuff.
 * [Libraries](#libraries)
     * [JLed](#jled)
     * [log4arduino](#log4arduino)
+    * [esp32-aws-iot](#eps32-aws-iot)
 * [Sketches](#sketches)
     * [Interfacing SSD1306 based OLED displays (SPI)](#interfacing-ssd1306-based-oled-displays-spi)
     * [Colorduino RGB matrix driver](#colorduino-rgb-matrix-driver)
@@ -19,7 +20,7 @@ Notes on Arduino libraries and sketches and other related stuff.
 
 <!-- vim-markdown-toc -->
 
-## Libraries
+## My Libraries
 
 ### JLed
 
@@ -29,6 +30,18 @@ time-driven manner.
 
 <img alt="jled" width=256 src="images/jled.gif">
 
+```c++
+// breathe LED (on gpio 9) 6 times for 1500ms, waiting for 500ms after each run
+#include <jled.h>
+
+auto led_breathe = JLed(9).Breathe(1500).Repeat(6).DelayAfter(500);
+
+void setup() { }
+
+void loop() {
+  led_breathe.Update();
+}
+```
 * https://github.com/jandelgado/jled
 
 ### log4arduino
@@ -49,6 +62,12 @@ Allows simple printf-like formatting and shows current time in millis and availa
 ```
 
 * https://github.com/jandelgado/log4arduino
+
+### eps32-aws-iot
+
+Code, tools and instructions on how to connect ESP32 securely to the AWS IOT cloud.
+
+* https://github.com/jandelgado/esp32-aws-iot
 
 ## Sketches
 
