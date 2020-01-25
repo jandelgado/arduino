@@ -16,6 +16,10 @@ Notes on Arduino libraries and sketches and other related stuff.
     * [Heltec WiFi Lora 32](#heltec-wifi-lora-32)
     * [Raspberry Pi 480x320 SPI TFT Display (3.5 inches)](#raspberry-pi-480x320-spi-tft-display-35-inches)
         * [Further info](#further-info)
+    * [Sipeed Longan Nano RISC-V proto board (GD32VF103CBT6)](#sipeed-longan-nano-risc-v-proto-board-gd32vf103cbt6)
+        * [DFU mode](#dfu-mode)
+        * [Upload demo sketch](#upload-demo-sketch)
+        * [TODO](#todo)
 
 <!-- vim-markdown-toc -->
 
@@ -174,4 +178,54 @@ Start X11 on the framebuffer with `sudo FBDEV=/dev/fb1 startx`.
 * [Adafruit info on FPS and SPI speed](https://learn.adafruit.com/adafruit-pitft-28-inch-resistive-touchscreen-display-raspberry-pi/help-faq#faq-11)
 * RPi case used: https://www.thingiverse.com/thing:1229473
 
+### Sipeed Longan Nano RISC-V proto board (GD32VF103CBT6)
+
+The Sipeed Longan Nano GD32VF103CBT6 board hosts a 32-bit RISC-V cpu with 32KB
+of SRAM and 128KB of Flash and a 160x80 Pixel RGB LCD display.
+
+[ ] TODO add photo
+
+#### DFU mode
+
+To upload a firmware image to the MCU, it has to be put into DFU mode first:
+Press and hold `Boot` before connecting the board using USB. Alternatively when
+the board is already connected: Press and hold `boot` and then `reset` to put
+the board in DFU mode, otherwise no upload is possible.
+
+Check with `lsusb|grep GD32` if the board was successfully detected, the output
+should look like:
+
+```
+Bus 001 Device 007: ID 28e9:0189 GDMicroelectronics GD32 0x418 DFU Bootloader
+```
+
+Running `sudo dfu-util -l` yields:
+
+```
+dfu-util 0.9
+...
+Found DFU: [28e9:0189] ver=1000, devnum=7, cfg=1, intf=0, path="1-2", alt=1, name="@Option Bytes  /0x1FFFF800/01*016 g", serial="??"
+Found DFU: [28e9:0189] ver=1000, devnum=7, cfg=1, intf=0, path="1-2", alt=0, name="@Internal Flash  /0x08000000/512*002Kg", serial="??"
+```
+
+#### Upload demo sketch 
+
+Before uploading to the MCU, make sure you installed [the udev rules as described here](https://docs.platformio.org/en/latest/faq.html#faq-udev-rules). Afterwards a
+`udevadm control --reload-rules && udevadm trigger` (as root) might be necessary.
+
+The [demo sketch](sipeed_longan_nano/sipeed_longan_nano.ino) can be compiled
+and uploaded with `make upload`, after the board was set to DFU mode. The
+following error seems to have no effect, and can be ignored:
+
+```
+dfu-util: dfuse_download: libusb_control_transfer returned -1
+*** [upload] Error 74
+```
+
+If the demo sketch works, you should now see the builtin LEDs cycle in colors
+red, green and blue.
+
+#### TODO
+ [ ] LCD demo w/ arduino framework
+ [ ] JLed demo
 
