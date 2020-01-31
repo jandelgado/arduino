@@ -21,7 +21,7 @@ Notes on Arduino libraries and sketches and other related stuff.
         * [DFU mode](#dfu-mode)
         * [Upload demo sketch](#upload-demo-sketch)
         * [TODO](#todo)
-    * [Raspberry Pi TFT HDMI display (800x480, 4")](#raspberry-pi-tft-hdmi-display-800x480-4)
+    * [Raspberry Pi HDMI LCD display (800x480, 4")](#raspberry-pi-hdmi-lcd-display-800x480-4)
 
 <!-- vim-markdown-toc -->
 
@@ -256,7 +256,7 @@ red, green and blue.
 - [ ] LCD demo w/ arduino framework
 - [ ] JLed demo
 
-### Raspberry Pi TFT HDMI display (800x480, 4")
+### Raspberry Pi HDMI LCD display (800x480, 4")
 
 <p float="left">
   <img alt="rpi tft hdmi" width=256 src="images/rpi_tft_hdmi_1.jpg">
@@ -269,6 +269,8 @@ display has a built in XPT2046 touch controller.
 I had to power both the Raspi (RPi 3) and the display to get it run. The display
 needs a custom resolution in `/boot/config.txt`, which is set by  `hdmi_mode=87`
 and `hdmi_cvt`.
+
+Add to `/boot/config.txt`:
 
 ```
 framebuffer_width=800
