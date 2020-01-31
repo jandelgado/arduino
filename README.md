@@ -4,10 +4,10 @@ Notes on Arduino libraries and sketches and other related stuff.
 
 <!-- vim-markdown-toc GFM -->
 
-* [Libraries](#libraries)
+* [My Libraries](#my-libraries)
     * [JLed](#jled)
     * [log4arduino](#log4arduino)
-    * [esp32-aws-iot](#eps32-aws-iot)
+    * [eps32-aws-iot](#eps32-aws-iot)
 * [Sketches](#sketches)
     * [Interfacing SSD1306 based OLED displays (SPI)](#interfacing-ssd1306-based-oled-displays-spi)
     * [Colorduino RGB matrix driver](#colorduino-rgb-matrix-driver)
@@ -21,6 +21,7 @@ Notes on Arduino libraries and sketches and other related stuff.
         * [DFU mode](#dfu-mode)
         * [Upload demo sketch](#upload-demo-sketch)
         * [TODO](#todo)
+    * [Raspberry Pi TFT HDMI display (800x480, 4")](#raspberry-pi-tft-hdmi-display-800x480-4)
 
 <!-- vim-markdown-toc -->
 
@@ -198,10 +199,11 @@ Start X11 on the framebuffer with `sudo FBDEV=/dev/fb1 startx`.
 
 ### Sipeed Longan Nano RISC-V proto board (GD32VF103CBT6)
 
+<img alt="sipeed nano" width=256 src="images/sipeed_nano_1.jpg">
+<img alt="sipeed nano" width=256 src="images/sipeed_nano_2.jpg">
+
 The Sipeed Longan Nano GD32VF103CBT6 board hosts a 32-bit RISC-V cpu with 32KB
 of SRAM and 128KB of Flash and a 160x80 Pixel RGB LCD display.
-
-[ ] TODO add photo
 
 #### DFU mode
 
@@ -244,6 +246,31 @@ If the demo sketch works, you should now see the builtin LEDs cycle in colors
 red, green and blue.
 
 #### TODO
- [ ] LCD demo w/ arduino framework
- [ ] JLed demo
+
+- [ ] LCD demo w/ arduino framework
+- [ ] JLed demo
+
+### Raspberry Pi TFT HDMI display (800x480, 4")
+
+<img alt="rpi tft hdmi" width=256 src="images/rpi_tft_hdmi_1.jpg">
+<img alt="rpi tft hdmi" width=256 src="images/rpi_tft_hdmi_2.jpg">
+
+The display is labelled "4inch HDMI LCD". The resolution is 800x480 and the 
+display has a built in XPT2046 touch controller.
+
+I had to power both the Raspi (RPi 3) and the display to get it run. The display
+needs a custom resolution in `/boot/config.txt`, which is set by  `hdmi_mode=87`
+and `hdmi_cvt`.
+
+```
+framebuffer_width=800
+framebuffer_height=480
+
+hdmi_group=2
+hdmi_mode=87
+hdmi_cvt=480 800 60 6
+display_hdmi_rotate=3
+```
+
+- [ ] Test the touch controller
 
