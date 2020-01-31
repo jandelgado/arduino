@@ -130,8 +130,10 @@ The ESP32 TTGO is an EPS32 with an integrated SSD1306 OLED display connected
 via I2C. The board also has a 18650 battery holder on the back, and and on-off
 switch.
 
-<img alt="esp32-ttgo" width=256 src="images/esp32-ttgo.png">
-<img alt="esp32-ttgo-back" width=256 src="images/esp32-ttgo-back.png">
+<p float="left">
+  <img alt="esp32-ttgo" width=256 src="images/esp32-ttgo.png">
+  <img alt="esp32-ttgo-back" width=256 src="images/esp32-ttgo-back.png">
+</p>
 
 * SSD1306 is connected with I2C and SCL connected to GPIO4 and SDA connected
   to GPIO5.
@@ -152,8 +154,10 @@ transceiver.
 
 ### Raspberry Pi 480x320 SPI TFT Display (3.5 inches)
 
-<img alt="RPi SPI display 480x320" width=256 src="images/rpi_tft_35.jpg">
-<img alt="RPi SPI display 480x320 demo" width=256 src="images/rpi_tft_35_demo.jpg">
+<p float="left">
+  <img alt="RPi SPI display 480x320" width=256 src="images/rpi_tft_35.jpg">
+  <img alt="RPi SPI display 480x320 demo" width=256 src="images/rpi_tft_35_demo.jpg">
+</p>
 
 The display is labeled with `RPi Display 480x320 Pixel XPT246 Touch Controller`
 and uses an `ILI9486` controller. In raspian (tested with `2018-11-13 Raspian`). 
