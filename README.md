@@ -199,8 +199,10 @@ Start X11 on the framebuffer with `sudo FBDEV=/dev/fb1 startx`.
 
 ### Sipeed Longan Nano RISC-V proto board (GD32VF103CBT6)
 
-<img alt="sipeed nano" width=256 src="images/sipeed_nano_1.jpg">
-<img alt="sipeed nano" width=256 src="images/sipeed_nano_2.jpg">
+<p float="left">
+  <img alt="sipeed nano" width=256 src="images/sipeed_nano_1.jpg">
+  <img alt="sipeed nano" width=256 src="images/sipeed_nano_2.jpg">
+</p>
 
 The Sipeed Longan Nano GD32VF103CBT6 board hosts a 32-bit RISC-V cpu with 32KB
 of SRAM and 128KB of Flash and a 160x80 Pixel RGB LCD display.
@@ -252,8 +254,10 @@ red, green and blue.
 
 ### Raspberry Pi TFT HDMI display (800x480, 4")
 
-<img alt="rpi tft hdmi" width=256 src="images/rpi_tft_hdmi_1.jpg">
-<img alt="rpi tft hdmi" width=256 src="images/rpi_tft_hdmi_2.jpg">
+<p float="left">
+  <img alt="rpi tft hdmi" width=256 src="images/rpi_tft_hdmi_1.jpg">
+  <img alt="rpi tft hdmi" width=256 src="images/rpi_tft_hdmi_2.jpg">
+</p>
 
 The display is labelled "4inch HDMI LCD". The resolution is 800x480 and the 
 display has a built in XPT2046 touch controller.
