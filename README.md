@@ -4,10 +4,10 @@ Notes on Arduino libraries and sketches and other related stuff.
 
 <!-- vim-markdown-toc GFM -->
 
-* [Libraries](#libraries)
+* [My Libraries](#my-libraries)
     * [JLed](#jled)
     * [log4arduino](#log4arduino)
-    * [esp32-aws-iot](#eps32-aws-iot)
+    * [eps32-aws-iot](#eps32-aws-iot)
 * [Sketches](#sketches)
     * [Interfacing SSD1306 based OLED displays (SPI)](#interfacing-ssd1306-based-oled-displays-spi)
     * [Colorduino RGB matrix driver](#colorduino-rgb-matrix-driver)
@@ -21,6 +21,7 @@ Notes on Arduino libraries and sketches and other related stuff.
         * [DFU mode](#dfu-mode)
         * [Upload demo sketch](#upload-demo-sketch)
         * [TODO](#todo)
+    * [Raspberry Pi HDMI LCD display (800x480, 4")](#raspberry-pi-hdmi-lcd-display-800x480-4)
 
 <!-- vim-markdown-toc -->
 
@@ -129,8 +130,10 @@ The ESP32 TTGO is an EPS32 with an integrated SSD1306 OLED display connected
 via I2C. The board also has a 18650 battery holder on the back, and and on-off
 switch.
 
-<img alt="esp32-ttgo" width=256 src="images/esp32-ttgo.png">
-<img alt="esp32-ttgo-back" width=256 src="images/esp32-ttgo-back.png">
+<p float="left">
+  <img alt="esp32-ttgo" width=256 src="images/esp32-ttgo.png">
+  <img alt="esp32-ttgo-back" width=256 src="images/esp32-ttgo-back.png">
+</p>
 
 * SSD1306 is connected with I2C and SCL connected to GPIO4 and SDA connected
   to GPIO5.
@@ -151,8 +154,10 @@ transceiver.
 
 ### Raspberry Pi 480x320 SPI TFT Display (3.5 inches)
 
-<img alt="RPi SPI display 480x320" width=256 src="images/rpi_tft_35.jpg">
-<img alt="RPi SPI display 480x320 demo" width=256 src="images/rpi_tft_35_demo.jpg">
+<p float="left">
+  <img alt="RPi SPI display 480x320" width=256 src="images/rpi_tft_35.jpg">
+  <img alt="RPi SPI display 480x320 demo" width=256 src="images/rpi_tft_35_demo.jpg">
+</p>
 
 The display is labeled with `RPi Display 480x320 Pixel XPT246 Touch Controller`
 and uses an `ILI9486` controller. In raspian (tested with `2018-11-13 Raspian`). 
@@ -198,10 +203,13 @@ Start X11 on the framebuffer with `sudo FBDEV=/dev/fb1 startx`.
 
 ### Sipeed Longan Nano RISC-V proto board (GD32VF103CBT6)
 
+<p float="left">
+  <img alt="sipeed nano" width=256 src="images/sipeed_nano_1.jpg">
+  <img alt="sipeed nano" width=256 src="images/sipeed_nano_2.jpg">
+</p>
+
 The Sipeed Longan Nano GD32VF103CBT6 board hosts a 32-bit RISC-V cpu with 32KB
 of SRAM and 128KB of Flash and a 160x80 Pixel RGB LCD display.
-
-[ ] TODO add photo
 
 #### DFU mode
 
@@ -244,6 +252,35 @@ If the demo sketch works, you should now see the builtin LEDs cycle in colors
 red, green and blue.
 
 #### TODO
- [ ] LCD demo w/ arduino framework
- [ ] JLed demo
+
+- [ ] LCD demo w/ arduino framework
+- [ ] JLed demo
+
+### Raspberry Pi HDMI LCD display (800x480, 4")
+
+<p float="left">
+  <img alt="rpi tft hdmi" width=256 src="images/rpi_tft_hdmi_1.jpg">
+  <img alt="rpi tft hdmi" width=256 src="images/rpi_tft_hdmi_2.jpg">
+</p>
+
+The display is labelled "4inch HDMI LCD". The resolution is 800x480 and the 
+display has a built in XPT2046 touch controller.
+
+I had to power both the Raspi (RPi 3) and the display to get it run. The display
+needs a custom resolution in `/boot/config.txt`, which is set by  `hdmi_mode=87`
+and `hdmi_cvt`.
+
+Add to `/boot/config.txt`:
+
+```
+framebuffer_width=800
+framebuffer_height=480
+
+hdmi_group=2
+hdmi_mode=87
+hdmi_cvt=480 800 60 6
+display_hdmi_rotate=3
+```
+
+- [ ] Test the touch controller
 
