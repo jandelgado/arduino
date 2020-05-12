@@ -22,6 +22,8 @@ Notes on Arduino libraries and sketches and other related stuff.
         * [Upload demo sketch](#upload-demo-sketch)
         * [TODO](#todo)
     * [Raspberry Pi HDMI LCD display (800x480, 4")](#raspberry-pi-hdmi-lcd-display-800x480-4)
+ * [Misc](#misc)
+    * [WS2812 protection circuit](#ws2812-protection-circuit)
 
 <!-- vim-markdown-toc -->
 
@@ -284,3 +286,10 @@ display_hdmi_rotate=3
 
 - [ ] Test the touch controller
 
+## Misc
+
+### WS2812 protection circuit
+
+I use this circuit when I connect WS2812 "neo pixels" to micro controllers (connected to `DATA` pin).
+
+<img src="images/WS2812_protection.jpg" width=400>
