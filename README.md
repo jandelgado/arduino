@@ -4,10 +4,12 @@ Notes on Arduino libraries and sketches and other related stuff.
 
 <!-- vim-markdown-toc GFM -->
 
-* [My Libraries](#my-libraries)
+* [My Libraries and projects](#my-libraries-and-projects)
     * [JLed](#jled)
     * [log4arduino](#log4arduino)
     * [eps32-aws-iot](#eps32-aws-iot)
+    * [USB Spinner Game Controller](#usb-spinner-game-controller)
+    * [Simpson Device (virtual Drinking Bird)](#simpson-device-virtual-drinking-bird)
 * [Sketches](#sketches)
     * [Interfacing SSD1306 based OLED displays (SPI)](#interfacing-ssd1306-based-oled-displays-spi)
     * [Colorduino RGB matrix driver](#colorduino-rgb-matrix-driver)
@@ -22,12 +24,13 @@ Notes on Arduino libraries and sketches and other related stuff.
         * [Upload demo sketch](#upload-demo-sketch)
         * [TODO](#todo)
     * [Raspberry Pi HDMI LCD display (800x480, 4")](#raspberry-pi-hdmi-lcd-display-800x480-4)
- * [Misc](#misc)
+* [Misc](#misc)
     * [WS2812 protection circuit](#ws2812-protection-circuit)
+* [Author](#author)
 
 <!-- vim-markdown-toc -->
 
-## My Libraries
+## My Libraries and projects
 
 ### JLed
 
@@ -75,6 +78,20 @@ Allows simple printf-like formatting and shows current time in millis and availa
 Code, tools and instructions on how to connect ESP32 securely to the AWS IOT cloud.
 
 * https://github.com/jandelgado/esp32-aws-iot
+
+### USB Spinner Game Controller
+
+An Arduino Pro Micro based USB spinner (like a paddle) game controller. Great
+to play games like e.g. Arkanoid. Simulates an USB mouse and needs no drivers.
+
+* https://github.com/jandelgado/usb-spinner
+
+### Simpson Device (virtual Drinking Bird)
+
+Simulates an USB mouse using an Attiny85 (Digispark board) and randomly moves
+your mouse (see The Simpsons S07E07).
+
+* https://github.com/jandelgado/simpson-device 
 
 ## Sketches
 
@@ -293,3 +310,8 @@ display_hdmi_rotate=3
 I use this circuit when I connect WS2812 "neo pixels" to micro controllers (connected to `DATA` pin).
 
 <img src="images/WS2812_protection.jpg" width=400>
+
+## Author
+
+(c) Copyright 2018-2020 by Jan Delhado. License: MIT
+
