@@ -313,5 +313,5 @@ I use this circuit when I connect WS2812 "neo pixels" to micro controllers (conn
 
 ## Author
 
-(c) Copyright 2018-2020 by Jan Delhado. License: MIT
+(c) Copyright 2018-2020 by Jan Delgado. License: MIT
 
