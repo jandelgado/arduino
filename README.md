@@ -24,6 +24,7 @@ Notes on Arduino libraries and sketches and other related stuff.
         * [Upload demo sketch](#upload-demo-sketch)
         * [TODO](#todo)
     * [Raspberry Pi HDMI LCD display (800x480, 4")](#raspberry-pi-hdmi-lcd-display-800x480-4)
+    * [Raspberry Pi Pico (RP2040)](#raspberry-pi-pico-rp2040)
 * [Misc](#misc)
     * [WS2812 protection circuit](#ws2812-protection-circuit)
 * [Author](#author)
@@ -302,6 +303,29 @@ display_hdmi_rotate=3
 ```
 
 - [ ] Test the touch controller
+
+### Raspberry Pi Pico (RP2040)
+
+<img src="images/pico.jpg" width=500>
+
+The Raspberry Pi Pico is a cheap but powerful new (end of 2020) micro
+controller. It features a dual core Arm cortex M0+ processor running with up to
+133Mhz, 264Kb SRAM and 2MB flash memory. It has no WiFi or Bluetooth.
+
+To flash the Pico, press the `BOOTSEL` button and attach the Pico using USB to
+your PC. The Pico will now act mass storage USB device. Simply copy the
+firmware (`uf2` extension) to the drive. The Pico will automatically disconnect
+and reboot.
+
+The Raspberry Pi Pico can be programmed in C/C++ or MicroPython. For C/C++ the
+[pico-sdk](https://github.com/raspberrypi/pico-sdk) and CMake must be used,
+which is not as easy to use as e.g. the Arduino IDE or platformio. To make
+things easier, I have created a [docker
+image](https://github.com/jandelgado/jled/blob/4.7.0/examples/raspi_pico/Dockerfile)
+and a [simple build script](https://github.com/jandelgado/jled/blob/4.7.0/examples/raspi_pico/build.sh).
+
+* [Look here for an example in my JLed library](https://github.com/jandelgado/jled/tree/4.7.0/examples/raspi_pico)
+* [official getting started guide](https://www.raspberrypi.org/documentation/pico/getting-started/)
 
 ## Misc
 
