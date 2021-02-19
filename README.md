@@ -322,9 +322,9 @@ The Raspberry Pi Pico can be programmed in C/C++ or MicroPython. For C/C++ the
 which is not as easy to use as e.g. the Arduino IDE or platformio. To make
 things easier, I have created a [docker
 image](https://github.com/jandelgado/jled/blob/4.7.0/examples/raspi_pico/Dockerfile)
-and a simple build script.
+and a [simple build script](https://github.com/jandelgado/jled/blob/4.7.0/examples/raspi_pico/build.sh).
 
-* [Look here for an example in my JLed library](https://github.com/jandelgado/jled/examples/raspi_pico/)
+* [Look here for an example in my JLed library](https://github.com/jandelgado/jled/tree/4.7.0/examples/raspi_pico)
 * [official getting started guide](https://www.raspberrypi.org/documentation/pico/getting-started/)
 
 ## Misc
