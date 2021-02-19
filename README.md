@@ -259,7 +259,7 @@ Found DFU: [28e9:0189] ver=1000, devnum=7, cfg=1, intf=0, path="1-2", alt=0, nam
 Before uploading to the MCU, make sure you installed [the udev rules as described here](https://docs.platformio.org/en/latest/faq.html#faq-udev-rules). Afterwards a
 `udevadm control --reload-rules && udevadm trigger` (as root) might be necessary.
 
-The [demo sketch](sipeed_longan_nano/sipeed_longan_nano.ino) can be compiled
+The [demo sketch](sipeed_longan_nano) can be compiled
 and uploaded with `make upload`, after the board was set to DFU mode. The
 following error seems to have no effect, and can be ignored:
 
