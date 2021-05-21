@@ -26,6 +26,8 @@ Notes on Arduino libraries and sketches and other related stuff.
     * [Raspberry Pi HDMI LCD display (800x480, 4")](#raspberry-pi-hdmi-lcd-display-800x480-4)
     * [Raspberry Pi Pico (RP2040)](#raspberry-pi-pico-rp2040)
     * [PCA9685 driver board](#pca9685-driver-board)
+    * [MP3 Modules](#mp3-modules)
+        * [Geeetch VS1053 notes](#geeetch-vs1053-notes)
 * [Misc](#misc)
     * [WS2812 protection circuit](#ws2812-protection-circuit)
 * [Author](#author)
@@ -66,7 +68,8 @@ delay(42);
 LOG("use %s formatting: %d %c %d %c %d", "printf", 9, '+', 1, '=', 10);
 ```
 
-Allows simple printf-like formatting and shows current time in millis and available memory, e.g.
+Allows simple printf-like formatting and shows current time in millis and
+available memory, e.g.
 
 ```
 0(1623): hello, log4arduino.
@@ -77,7 +80,8 @@ Allows simple printf-like formatting and shows current time in millis and availa
 
 ### eps32-aws-iot
 
-Code, tools and instructions on how to connect ESP32 securely to the AWS IOT cloud.
+Code, tools and instructions on how to connect ESP32 securely to the AWS IOT
+cloud.
 
 * https://github.com/jandelgado/esp32-aws-iot
 
@@ -357,6 +361,73 @@ There are many libraries for PCA9685 based boards out there, I successfully
 used the [Adafruit PWM Servo Driver
 library](https://github.com/adafruit/Adafruit-PWM-Servo-Driver-Library). 
 Have a look at [this example here](pca9685).
+
+### MP3 Modules
+
+I recently [built a Music Box for Kids](https://github.com/jandelgado/carl) and
+evaluated some MP3 modules to find the right one for the job (I finally ended
+up using the DFPlayer Mini).
+
+![MP3 Modules](images/mp3_modules.jpg)
+
+|                  | WTV020M01 V1.00                    | DFPlayer Mini                                          | Catalex Serial MP3 Player V1.0                              | VS1053 MP3 Shield (geeetech)                                                     | GPD2856A based                                      |
+|------------------|------------------------------------|--------------------------------------------------------|-------------------------------------------------------------|----------------------------------------------------------------------------------|-----------------------------------------------------|
+| Dimensions (mm)  | 22x17                              | 20x20                                                  | 40x23                                                       | 55x55                                                                            | 45x35, 22x34                                        |
+| VCC              | 3.3V                               |                                                        | 3.2V-5.2V                                                   |                                                                                  | 3.7V-5V                                             |
+| Current          |                                    |                                                        |                                                             |                                                                                  |                                                     |
+| Chip             | ?                                  | ?                                                      | YX5300                                                      | VLSI VS1053B                                                                     | GPOD2856A                                           |
+| Media            | Micro SD, 1 or 2GB, very picky     | Micro SD up to 32GB                                    | Micro SD up to GB                                           | Micro SD                                                                         |                                                     |
+| Filesystem       | FAZT16/32                          | FAT16/32                                               | FAT16/32                                                    | FAT16/32                                                                         |                                                     |
+| Max Files        | 512                                | 100*255                                                | ?                                                           | ?                                                                                | ?                                                   |
+| Formats          | AD4,NO MP3                         | MP3, WAV                                               | MP3, WAV                                                    | MP1,MP2,MP3,MP4,AAC,OGG,WAV and more                                             |                                                     |
+| Frequency        | 32kHz                              | 8-48kHz                                                | 11-48kHz                                                    |                                                                                  | 2W Mono                                             |
+| Amplifier        | Yes                                | Yes                                                    | Line out only                                               |                                                                                  |                                                     |
+| Buttons          | Opt.: Play, Prev, Next, Vol+, Vol- | Optional                                               | No                                                          |                                                                                  | Play,  Prev, Next, Vol+, Vol-                       |
+| Serial Interface | 2 Line + CLK                       | UART 9600bps                                           | UART 9600bps                                                |                                                                                  |                                                     |
+| Microphone       | No                                 | No                                                     | No                                                          | Record in OGG, WAV                                                               |                                                     |
+| Misc             | Busy signal, Reset input           | Busy signal, Equalizer                                 |                                                             |                                                                                  |                                                     |
+| Price (04/2021)  | ca. 4€                             | Starting at 1€                                         | ca. 2€                                                      | ?                                                                                | starting at 1€                                      |
+| Library          |                                    | [Link](https://github.com/DFRobot/DFRobotDFPlayerMini) | [Link](https://github.com/cefaloide/ArduinoSerialMP3Player) | [Link](https://github.com/madsci1016/Sparkfun-MP3-Player-Shield-Arduino-Library) | n/a                                                 |
+| Site             |                                    |                                                        |                                                             |                                                                                  |                                                     |
+| Comment          | Better use DFPlayer Mini instead   |                                                        |                                                             | Many features, good documentation                                                | Standalone Player, w/ and wo/ buttons and terminals |
+
+Summary:
+* WTV020M01 is not recommended since not supporting MP3 format and very
+  restrictive regarding SD cards used and audio encoding
+* The GPD2856A based boards are designed as stand alone players and are not
+  meant to be controlled by a micro controller.  
+* The DFPlayer Mini is a reliable board which can be controlled by a micro
+  controller. It has an amplifier built in as well as an equalizer.
+* The VL1053 based shield supports many file formats and even recording of
+  audio. It lacks an amplifier but is otherwise feature-packed.
+* The Catalex board is very simple to use and can be controlled by a micro
+  controller. It lacks an amplifier and offers only a serial interface for
+  control.
+
+Addiontial links: 
+* DFPlayerMini: https://wiki.dfrobot.com/DFPlayer_Mini_SKU_DFR0299
+* Catalex: http://geekmatic.in.ua/pdf/Catalex_MP3_board.pdf
+* GPD2856A: https://www.petervis.com/Electronics_Kits/gpd2856a/gpd2856a-mp3-decoder-board.html
+* WTV020M01: https://hackaday.io/project/3508-portable-trollmaster-3000/log/12391-the-joy-of-using-an-underdocumented-module-and-using-a-plan-b-at-the-last-minute
+* Geeetch VS1053: http://www.geeetech.com/wiki/index.php/Arduino_MP3_shield_board_with_TF_card
+    * Profiles for the VS1053: http://www.vlsi.fi/en/support/software/vs10xxapplications.html
+
+#### Geeetch VS1053 notes
+
+The module is also capable to record audio on the SD card in OGG Vorbis and WAV
+format. To encode the audio in OGG format, a plugin needs to be loaded from the
+SD card. The plugins are available [here at
+VLSI](http://www.vlsi.fi/fileadmin/software/VS10XX/vs1053-vorbis-encoder-170c.zip).
+Pick yours from the `profiles/` directory (files with `.img` extension). The
+name of the plugin is passed to the `prepareRecordingOgg` function. I had to
+change the name to conform to 8.3 naming (e.g. `v08k1q06.img`), otherwise the
+plugin did not load.  Refer to the
+[documentation](http://www.vlsi.fi/fileadmin/software/VS10XX/VorbisEncoder170c.pdf)
+for more details.
+
+Libraries and examples: 
+* https://github.com/adafruit/Adafruit_VS1053_Library
+* https://github.com/madsci1016/Sparkfun-MP3-Player-Shield-Arduino-Library
 
 ## Misc
 
