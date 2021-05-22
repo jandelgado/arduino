@@ -25,6 +25,7 @@ Notes on Arduino libraries and sketches and other related stuff.
         * [TODO](#todo)
     * [Raspberry Pi HDMI LCD display (800x480, 4")](#raspberry-pi-hdmi-lcd-display-800x480-4)
     * [Raspberry Pi Pico (RP2040)](#raspberry-pi-pico-rp2040)
+    * [PCA9685 driver board](#pca9685-driver-board)
 * [Misc](#misc)
     * [WS2812 protection circuit](#ws2812-protection-circuit)
 * [Author](#author)
@@ -327,15 +328,45 @@ and a [simple build script](https://github.com/jandelgado/jled/blob/4.7.0/exampl
 * [Look here for an example in my JLed library](https://github.com/jandelgado/jled/tree/4.7.0/examples/raspi_pico)
 * [official getting started guide](https://www.raspberrypi.org/documentation/pico/getting-started/)
 
+### PCA9685 driver board
+
+The PCA9685 is an **I2C bus** controlled LED/Servo controller **with 16
+individually controllable PWM channels**. Each channel has a resolution of 12
+bits, resulting in 4096 steps. All channels operate at the same fixed
+frequency, which must be in the range between 24Hz and 1526Hz. 
+
+The board operates at 3V to 5V, which is fed through the VCC pin. The V+ pin
+is optional and is used to power servos or LEDs with up to 6V. The V+ voltage
+can also be fed through the green terminal block and is routed to the red V+
+pins.
+
+Each of the yellow PWM outputs on the board has a 220 Ohms resistor in series,
+which allows the direct connection of a LED. The output level is the same as
+VCC.
+
+SDA and SCL are the I2C data and clock pins. The OE pin is optional (and pulled
+down by default) and is used to quickly disable all outputs (by setting OE to
+high level).
+
+The I2C address is by default `0x40` and can be changed by closing the `A0` to 
+`A5` pins using a soldering iron.
+
+<img src="images/pca9685.png" width=400>
+
+There are many libraries for PCA9685 based boards out there, I successfully
+used the [Adafruit PWM Servo Driver
+library](https://github.com/adafruit/Adafruit-PWM-Servo-Driver-Library). 
+Have a look at [this example here](pca9685).
+
 ## Misc
 
 ### WS2812 protection circuit
 
 I use this circuit when I connect WS2812 "neo pixels" to micro controllers (connected to `DATA` pin).
 
-<img src="images/WS2812_protection.jpg" width=400>
+<img src="images/WS2812_protection.jpg" width=600>
 
 ## Author
 
-(c) Copyright 2018-2020 by Jan Delgado. License: MIT
+(c) Copyright 2018-2021 by Jan Delgado. License: MIT
 
