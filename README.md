@@ -27,7 +27,7 @@ Notes on Arduino libraries and sketches and other related stuff.
     * [Raspberry Pi Pico (RP2040)](#raspberry-pi-pico-rp2040)
     * [PCA9685 driver board](#pca9685-driver-board)
     * [MP3 Modules](#mp3-modules)
-        * [Geeetch VS1053 notes](#geeetch-vs1053-notes)
+        * [VS1053 notes](#vs1053-notes)
 * [Misc](#misc)
     * [WS2812 protection circuit](#ws2812-protection-circuit)
 * [Author](#author)
@@ -377,9 +377,9 @@ up using the DFPlayer Mini).
 | Current          |                                    |                                                        |                                                             |                                                                                  |                                                     |
 | Chip             | ?                                  | ?                                                      | YX5300                                                      | VLSI VS1053B                                                                     | GPOD2856A                                           |
 | Media            | Micro SD, 1 or 2GB, very picky     | Micro SD up to 32GB                                    | Micro SD up to GB                                           | Micro SD                                                                         |                                                     |
-| Filesystem       | FAZT16/32                          | FAT16/32                                               | FAT16/32                                                    | FAT16/32                                                                         |                                                     |
+| Filesystem       | FAT16/32                           | FAT16/32                                               | FAT16/32                                                    | FAT16/32                                                                         |                                                     |
 | Max Files        | 512                                | 100*255                                                | ?                                                           | ?                                                                                | ?                                                   |
-| Formats          | AD4,NO MP3                         | MP3, WAV                                               | MP3, WAV                                                    | MP1,MP2,MP3,MP4,AAC,OGG,WAV and more                                             |                                                     |
+| Formats          | AD4,NO MP3                         | MP3, WAV                                               | MP3, WAV                                                    | MP1, MP2, MP3, MP4, AAC, OGG, WAV and more                                       |                                                     |
 | Frequency        | 32kHz                              | 8-48kHz                                                | 11-48kHz                                                    |                                                                                  | 2W Mono                                             |
 | Amplifier        | Yes                                | Yes                                                    | Line out only                                               |                                                                                  |                                                     |
 | Buttons          | Opt.: Play, Prev, Next, Vol+, Vol- | Optional                                               | No                                                          |                                                                                  | Play,  Prev, Next, Vol+, Vol-                       |
@@ -412,7 +412,7 @@ Addiontial links:
 * Geeetch VS1053: http://www.geeetech.com/wiki/index.php/Arduino_MP3_shield_board_with_TF_card
     * Profiles for the VS1053: http://www.vlsi.fi/en/support/software/vs10xxapplications.html
 
-#### Geeetch VS1053 notes
+#### VS1053 notes
 
 The module is also capable to record audio on the SD card in OGG Vorbis and WAV
 format. To encode the audio in OGG format, a plugin needs to be loaded from the
