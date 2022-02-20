@@ -162,6 +162,7 @@ switch.
 
 * SSD1306 is connected with I2C and SCL connected to GPIO4 and SDA connected
   to GPIO5.
+* the builtin blue LED is connected to GPIO 16
 * see [example sketch](esp32_ttgo) for an example on how to use it with 
   the u8g2 library.
 
