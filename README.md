@@ -22,12 +22,12 @@ Notes on Arduino libraries and sketches and other related stuff.
     * [Sipeed Longan Nano RISC-V proto board (GD32VF103CBT6)](#sipeed-longan-nano-risc-v-proto-board-gd32vf103cbt6)
         * [DFU mode](#dfu-mode)
         * [Upload demo sketch](#upload-demo-sketch)
-        * [TODO](#todo)
     * [Raspberry Pi HDMI LCD display (800x480, 4")](#raspberry-pi-hdmi-lcd-display-800x480-4)
     * [Raspberry Pi Pico (RP2040)](#raspberry-pi-pico-rp2040)
     * [PCA9685 driver board](#pca9685-driver-board)
     * [MP3 Modules](#mp3-modules)
         * [VS1053 notes](#vs1053-notes)
+    * [Bosch BMP280](#bosch-bmp280)
 * [Misc](#misc)
     * [WS2812 protection circuit](#ws2812-protection-circuit)
 * [Author](#author)
@@ -40,7 +40,7 @@ Notes on Arduino libraries and sketches and other related stuff.
 
 JLed is an Arduino library to control LEDs. It uses a non-blocking approach and
 can control LEDs in simple (on/off) and complex (blinking, breathing) ways in a
-time-driven manner.
+time-driven manner. It's available as a C++ or Python lib.
 
 <img alt="jled" width=256 src="images/jled.gif">
 
@@ -56,7 +56,21 @@ void loop() {
   led_breathe.Update();
 }
 ```
+
+The Python API mirrors the C++ API:
+
+```python
+import board
+from jled import JLed
+
+led = JLed(board.LED).blink(500, 500).forever()
+
+while True:
+    led.update()
+```
+
 * https://github.com/jandelgado/jled
+* https://github.com/jandelgado/jled-circuitpython
 
 ### log4arduino
 
@@ -277,7 +291,7 @@ dfu-util: dfuse_download: libusb_control_transfer returned -1
 If the demo sketch works, you should now see the builtin LEDs cycle in colors
 red, green and blue.
 
-#### TODO
+TODO
 
 - [ ] LCD demo w/ arduino framework
 - [ ] JLed demo
@@ -428,6 +442,62 @@ for more details.
 Libraries and examples: 
 * https://github.com/adafruit/Adafruit_VS1053_Library
 * https://github.com/madsci1016/Sparkfun-MP3-Player-Shield-Arduino-Library
+
+### Bosch BMP280
+
+<img src="images/bmp280.png" width="500" alt="bmp280">
+
+The [Bosch
+BMP280](https://www.bosch-sensortec.com/products/environmental-sensors/pressure-sensors/bmp280/)
+is an environmental sensor, capable of measuring temperature and barometric air
+Pressure. The sensor supports both I²C and SPI.  There are many different
+boards available, mine is labeled `GY-BME/PM280` and costs about 1.60€
+(02/2023). I successfully connected it using I²C and CircuitPython, running on
+an Raspberry Pi Pico W using the
+[adafruit_bmp280](https://github.com/adafruit/Adafruit_CircuitPython_BMP280)
+library (install on the Pico Pi with `circup adadfruit_bmp280`). 
+
+In the example I connected the sensor as follows:
+
+| GY-BME/PM280 | Pico Pi Signal | Pin |
+|--------------|----------------|-----|
+| VCC          | 3V3(OUT)       | 36  |
+| GND          | GND            | 23  |
+| SCL          | GP17/I2C0SCL   | 22  |
+| SDA          | GP16/I2C0SDA   | 21  |
+
+Running an I²C bus scan in the CircuitPython REPL reveals that the device is
+has address 0x76 (118):
+
+```
+>>> import busio
+>>> import board
+>>> i2c = busio.I2C(board.GP1, board.GP0)
+>>> i2c.try_lock()
+True
+>>> i2c.scan()
+[118]
+```
+
+This is important, since the Adafruit library defaults to 119. Reading values
+from the sensor is straight forward:
+
+
+```python
+import busio
+import board
+import adafruit_bmp280
+
+i2c = busio.I2C(board.GP17, board.GP16)
+sensor = adafruit_bmp280.Adafruit_BMP280_I2C(i2c, 118)
+
+print(sensor.temperature)
+print(sensor.pressure)
+```
+
+The first sensor I tried was broken. It was correctly detected during the bus
+scan, but delivered wrong measurements all the time. Luckily I had some more
+at hand to test wether it was a software or a hardware problem.
 
 ## Misc
 
