@@ -28,7 +28,7 @@ Notes on Arduino libraries and sketches and other related stuff.
     * [MP3 Modules](#mp3-modules)
         * [VS1053 notes](#vs1053-notes)
     * [Bosch BMP280](#bosch-bmp280)
-* [TM1637 based Display](#tm1637-based-display)
+    * [TM1637 based Display](#tm1637-based-display)
 * [Misc](#misc)
     * [WS2812 protection circuit](#ws2812-protection-circuit)
 * [Author](#author)
@@ -501,7 +501,7 @@ The first sensor I tried was broken. It was correctly detected during the bus
 scan, but delivered wrong measurements all the time. Luckily I had some more
 at hand to test wether it was a software or a hardware problem.
 
-## TM1637 based Display
+### TM1637 based Display
 
 <img src="images/TM1637.png" width="500" alt="bmp280">
 
