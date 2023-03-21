@@ -28,6 +28,7 @@ Notes on Arduino libraries and sketches and other related stuff.
     * [MP3 Modules](#mp3-modules)
         * [VS1053 notes](#vs1053-notes)
     * [Bosch BMP280](#bosch-bmp280)
+* [TM1637 based Display](#tm1637-based-display)
 * [Misc](#misc)
     * [WS2812 protection circuit](#ws2812-protection-circuit)
 * [Author](#author)
@@ -484,6 +485,7 @@ from the sensor is straight forward:
 
 
 ```python
+# CircuitPython example
 import busio
 import board
 import adafruit_bmp280
@@ -498,6 +500,31 @@ print(sensor.pressure)
 The first sensor I tried was broken. It was correctly detected during the bus
 scan, but delivered wrong measurements all the time. Luckily I had some more
 at hand to test wether it was a software or a hardware problem.
+
+## TM1637 based Display
+
+<img src="images/TM1637.png" width="500" alt="bmp280">
+
+This is a 4 digit 7-segment display using a TM1637 driver, which uses a data
+and a clock line for connection to the MCU.
+
+| Display(TM1637) | Pico Pi Signal       | Pin |
+|-----------------|----------------------|-----|
+| CLK             | GP14                 | 19  |
+| DIO             | GP15                 | 20  |
+| VCC             | 3V3(OUT) or VBUS(5V) | 36  |
+| GND             | GND                  | 18  |
+
+```python
+# CircuitPython example using https://github.com/bablokb/circuitpython-tm1637
+import board
+from TM1637 import TM1637
+
+display = TM1637(board.GP14,board.GP15)
+display.hex(0xcafe)
+display.scroll("hello world")
+display.temperature(23)
+```
 
 ## Misc
 
