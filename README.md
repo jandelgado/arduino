@@ -5,32 +5,33 @@ Notes on Arduino libraries and sketches and other related stuff.
 <!-- vim-markdown-toc GFM -->
 
 * [My Libraries and projects](#my-libraries-and-projects)
-    * [JLed](#jled)
-    * [log4arduino](#log4arduino)
-    * [eps32-aws-iot](#eps32-aws-iot)
-    * [USB Spinner Game Controller](#usb-spinner-game-controller)
-    * [Simpson Device (virtual Drinking Bird)](#simpson-device-virtual-drinking-bird)
+  * [JLed](#jled)
+  * [log4arduino](#log4arduino)
+  * [eps32-aws-iot](#eps32-aws-iot)
+  * [USB Spinner Game Controller](#usb-spinner-game-controller)
+  * [Simpson Device (virtual Drinking Bird)](#simpson-device-virtual-drinking-bird)
 * [Sketches](#sketches)
-    * [Interfacing SSD1306 based OLED displays (SPI)](#interfacing-ssd1306-based-oled-displays-spi)
-    * [Colorduino RGB matrix driver](#colorduino-rgb-matrix-driver)
-    * [CJMCU-8x8 RGB matix](#cjmcu-8x8-rgb-matix)
-    * [WEMOS D-Duino](#wemos-d-duino)
-    * [ESP32 TTGO](#esp32-ttgo)
-    * [Heltec WiFi Lora 32](#heltec-wifi-lora-32)
-    * [Raspberry Pi 480x320 SPI TFT Display (3.5 inches)](#raspberry-pi-480x320-spi-tft-display-35-inches)
-        * [Further info](#further-info)
-    * [Sipeed Longan Nano RISC-V proto board (GD32VF103CBT6)](#sipeed-longan-nano-risc-v-proto-board-gd32vf103cbt6)
-        * [DFU mode](#dfu-mode)
-        * [Upload demo sketch](#upload-demo-sketch)
-    * [Raspberry Pi HDMI LCD display (800x480, 4")](#raspberry-pi-hdmi-lcd-display-800x480-4)
-    * [Raspberry Pi Pico (RP2040)](#raspberry-pi-pico-rp2040)
-    * [PCA9685 driver board](#pca9685-driver-board)
-    * [MP3 Modules](#mp3-modules)
-        * [VS1053 notes](#vs1053-notes)
-    * [Bosch BMP280](#bosch-bmp280)
-    * [TM1637 based Display](#tm1637-based-display)
+  * [Interfacing SSD1306 based OLED displays (SPI)](#interfacing-ssd1306-based-oled-displays-spi)
+  * [Colorduino RGB matrix driver](#colorduino-rgb-matrix-driver)
+  * [CJMCU-8x8 RGB matix](#cjmcu-8x8-rgb-matix)
+  * [WEMOS D-Duino](#wemos-d-duino)
+  * [ESP32 TTGO](#esp32-ttgo)
+  * [Heltec WiFi Lora 32](#heltec-wifi-lora-32)
+  * [Raspberry Pi 480x320 SPI TFT Display (3.5 inches)](#raspberry-pi-480x320-spi-tft-display-35-inches)
+    * [Further info](#further-info)
+  * [Sipeed Longan Nano RISC-V proto board (GD32VF103CBT6)](#sipeed-longan-nano-risc-v-proto-board-gd32vf103cbt6)
+    * [DFU mode](#dfu-mode)
+    * [Upload demo sketch](#upload-demo-sketch)
+  * [Raspberry Pi HDMI LCD display (800x480, 4")](#raspberry-pi-hdmi-lcd-display-800x480-4)
+  * [Raspberry Pi Pico (RP2040)](#raspberry-pi-pico-rp2040)
+  * [PCA9685 driver board](#pca9685-driver-board)
+  * [MP3 Modules](#mp3-modules)
+    * [VS1053 notes](#vs1053-notes)
+  * [Bosch BMP280](#bosch-bmp280)
+  * [TM1637 based Display](#tm1637-based-display)
+  * [ESP32 board with 1.14" RGB ST7789V TFT display](#esp32-board-with-114-rgb-st7789v-tft-display)
 * [Misc](#misc)
-    * [WS2812 protection circuit](#ws2812-protection-circuit)
+  * [WS2812 protection circuit](#ws2812-protection-circuit)
 * [Author](#author)
 
 <!-- vim-markdown-toc -->
@@ -112,11 +113,11 @@ to play games like e.g. Arkanoid. Simulates an USB mouse and needs no drivers.
 Simulates an USB mouse using an Attiny85 (Digispark board) and randomly moves
 your mouse (see The Simpsons S07E07).
 
-* https://github.com/jandelgado/simpson-device 
+* https://github.com/jandelgado/simpson-device
 
 ## Sketches
 
-To build the demo sketches you can either copy the folders to the source 
+To build the demo sketches you can either copy the folders to the source
 folder of your Arduino IDE or use PlatformIO and the provided makefiles, e.g.:
 
 ```
@@ -155,13 +156,13 @@ rmation.
 ### WEMOS D-Duino
 
 The Wemos D-Duino is an ESP8266 board with an integrated SSD1306 OLED display
-connected via I2C. 
+connected via I2C.
 
 <img alt="wemos-d-duino" width=256 src="images/wemos-d-duino.png">
 
 * SSD1306 is connected with I2C and SCL connected to D2 and SDA connected
   to D1.
-* see [example sketch](wemos_d_duino) for an example on how to use it with 
+* see [example sketch](wemos_d_duino) for an example on how to use it with
   the u8g2 library.
 
 ### ESP32 TTGO
@@ -178,7 +179,7 @@ switch.
 * SSD1306 is connected with I2C and SCL connected to GPIO4 and SDA connected
   to GPIO5.
 * the builtin blue LED is connected to GPIO 16
-* see [example sketch](esp32_ttgo) for an example on how to use it with 
+* see [example sketch](esp32_ttgo) for an example on how to use it with
   the u8g2 library.
 
 ### Heltec WiFi Lora 32
@@ -201,7 +202,7 @@ transceiver.
 </p>
 
 The display is labeled with `RPi Display 480x320 Pixel XPT246 Touch Controller`
-and uses an `ILI9486` controller. In raspian (tested with `2018-11-13 Raspian`). 
+and uses an `ILI9486` controller. In raspian (tested with `2018-11-13 Raspian`).
 no additional drivers are needed. I got it running with the following configuration:
 
 Add to `/boot/config.txt`:
@@ -275,7 +276,7 @@ Found DFU: [28e9:0189] ver=1000, devnum=7, cfg=1, intf=0, path="1-2", alt=1, nam
 Found DFU: [28e9:0189] ver=1000, devnum=7, cfg=1, intf=0, path="1-2", alt=0, name="@Internal Flash  /0x08000000/512*002Kg", serial="??"
 ```
 
-#### Upload demo sketch 
+#### Upload demo sketch
 
 Before uploading to the MCU, make sure you installed [the udev rules as described here](https://docs.platformio.org/en/latest/faq.html#faq-udev-rules). Afterwards a
 `udevadm control --reload-rules && udevadm trigger` (as root) might be necessary.
@@ -304,7 +305,7 @@ TODO
   <img alt="rpi tft hdmi" width=256 src="images/rpi_tft_hdmi_2.jpg">
 </p>
 
-The display is labelled "4inch HDMI LCD". The resolution is 800x480 and the 
+The display is labelled "4inch HDMI LCD". The resolution is 800x480 and the
 display has a built in XPT2046 touch controller.
 
 I had to power both the Raspi (RPi 3) and the display to get it run. The display
@@ -353,7 +354,7 @@ and a [simple build script](https://github.com/jandelgado/jled/blob/4.7.0/exampl
 The PCA9685 is an **I2C bus** controlled LED/Servo controller **with 16
 individually controllable PWM channels**. Each channel has a resolution of 12
 bits, resulting in 4096 steps. All channels operate at the same fixed
-frequency, which must be in the range between 24Hz and 1526Hz. 
+frequency, which must be in the range between 24Hz and 1526Hz.
 
 The board operates at 3V to 5V, which is fed through the VCC pin. The V+ pin
 is optional and is used to power servos or LEDs with up to 6V. The V+ voltage
@@ -368,14 +369,14 @@ SDA and SCL are the I2C data and clock pins. The OE pin is optional (and pulled
 down by default) and is used to quickly disable all outputs (by setting OE to
 high level).
 
-The I2C address is by default `0x40` and can be changed by closing the `A0` to 
+The I2C address is by default `0x40` and can be changed by closing the `A0` to
 `A5` pins using a soldering iron.
 
 <img src="images/pca9685.png" width=400>
 
 There are many libraries for PCA9685 based boards out there, I successfully
 used the [Adafruit PWM Servo Driver
-library](https://github.com/adafruit/Adafruit-PWM-Servo-Driver-Library). 
+library](https://github.com/adafruit/Adafruit-PWM-Servo-Driver-Library).
 Have a look at [this example here](pca9685).
 
 ### MP3 Modules
@@ -410,7 +411,7 @@ Summary:
 * WTV020M01 is not recommended since not supporting MP3 format and very
   restrictive regarding SD cards used and audio encoding
 * The GPD2856A based boards are designed as stand alone players and are not
-  meant to be controlled by a micro controller.  
+  meant to be controlled by a micro controller.
 * The DFPlayer Mini is a reliable board which can be controlled by a micro
   controller. It has an amplifier built in as well as an equalizer.
 * The VL1053 based shield supports many file formats and even recording of
@@ -419,7 +420,7 @@ Summary:
   controller. It lacks an amplifier and offers only a serial interface for
   control.
 
-Addiontial links: 
+Addiontial links:
 * DFPlayerMini: https://wiki.dfrobot.com/DFPlayer_Mini_SKU_DFR0299
 * Catalex: http://geekmatic.in.ua/pdf/Catalex_MP3_board.pdf
 * GPD2856A: https://www.petervis.com/Electronics_Kits/gpd2856a/gpd2856a-mp3-decoder-board.html
@@ -440,7 +441,7 @@ plugin did not load.  Refer to the
 [documentation](http://www.vlsi.fi/fileadmin/software/VS10XX/VorbisEncoder170c.pdf)
 for more details.
 
-Libraries and examples: 
+Libraries and examples:
 * https://github.com/adafruit/Adafruit_VS1053_Library
 * https://github.com/madsci1016/Sparkfun-MP3-Player-Shield-Arduino-Library
 
@@ -456,7 +457,7 @@ boards available, mine is labeled `GY-BME/PM280` and costs about 1.60€
 (02/2023). I successfully connected it using I²C and CircuitPython, running on
 an Raspberry Pi Pico W using the
 [adafruit_bmp280](https://github.com/adafruit/Adafruit_CircuitPython_BMP280)
-library (install on the Pico Pi with `circup adadfruit_bmp280`). 
+library (install on the Pico Pi with `circup adadfruit_bmp280`).
 
 In the example I connected the sensor as follows:
 
@@ -524,6 +525,54 @@ display = TM1637(board.GP14,board.GP15)
 display.hex(0xcafe)
 display.scroll("hello world")
 display.temperature(23)
+```
+
+### ESP32 board with 1.14" RGB ST7789V TFT display
+
+<img src="images/esp32_st7789v.jpg" width=600>
+
+This module was sold on aliexpress as an ESP32-S3 (_T-Display T-PicoC3 ESP32 S3
+1,9 Zoll WiFi und Bluetooth-kompatibles Modul ESP32 C3 Entwicklungsboard 1,14
+Zoll LCD für Arduino_), but the one I got had an ESP32-D0WDQD6 and not an
+ESP32-S3, as advertised. According to the specs, the display is a 1.14" RGB TFT
+display with an ST7789V controller, connected by SPI, wired as follows:
+
+| Signal        | Pin |
+|-------------  |-----|
+| `MOSI`        | 19  |
+| `SCLK`        | 18  |
+| `CS`          | 5   |
+| `DC`          | 16  |
+| `RST`         | 23  |
+| `BL`          | 4   |
+
+I tested 2 different libraries to control the TFT:
+
+1. [deirvlon/ST7789v-Arduino](https://github.com/deirvlon/ST7789v-Arduino):
+   while I had initially success in getting displayed at least anything,
+   further inspection of the [code](https://github.com/deirvlon/ST7789v-Arduino/blob/main/ST7789v_arduino.cpp#L545)
+   revealed, that the lib is hardwired to a  resoultion of 240x320 pixels, resulting
+   in a wrong geometry of displayed graphics
+2. [adafruit/Adafruit ST7735 and ST7789 Library](https://github.com/adafruit/Adafruit-ST7735-Library):
+   this lib finally worked, and I have adapted one of the original [demos here](esp32_st7789v/test.ino),
+   with the proper configuration
+
+During development, I eventually found out, that `BL` stands for `BACKLIGHT`: the
+backlight must be turned on, otherwise the screen will stay black. For that, I
+added the following code:
+
+```c++
+...
+#define BL 4
+...
+
+void setup() {
+  ...
+  // turn the backlight on
+  pinMode(BL, OUTPUT);
+  digitalWrite(BL, 1);
+  ...
+}
 ```
 
 ## Misc
