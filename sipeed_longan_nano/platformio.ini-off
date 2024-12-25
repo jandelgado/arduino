@@ -2,6 +2,8 @@
 env_default = sipeed_longan_nano
 src_dir = .
 
+; no longer works an platformio does not support arduino framework
+; for the sipeed-longan-nano using the nuclei sdk.
 [env:sipeed_longan_nano]
 platform = gd32v
 board =  sipeed-longan-nano
