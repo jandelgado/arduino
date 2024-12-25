@@ -1,0 +1,27 @@
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+name: build examples
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout code
+      uses: actions/checkout@v4
+
+    - name: install python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.13'
+
+    - name: install tools
+      run: |
+        pip install platformio==6.1.10
+
+    - name: build examples
+      run: make -C .common ci

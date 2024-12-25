@@ -1,21 +1,28 @@
 # makefile to build examples with platformi
 #
-.PHONY: run clean upload monitor ci envdump
+.PHONY: phony
 
-run:
+run: phony
 	pio run
 
-envdump:
+envdump: phony
 	-pio run --target envdump
 
-clean:
+clean: phony
 	-pio run --target clean
 
-upload:
-	pio run --target upload 
+upload: phony
+	pio run --target upload
 
-monitor:
-	pio device monitor 
+monitor: phony
+	pio device monitor
 
-tags:
+tags: phony
 	ctags -R
+
+ci:
+	find .. -maxdepth 2 -not -path '\.\./\.common/*'  -name Makefile \
+		-exec sh -c 'make -C $$(dirname {})' \;
+phony:
+
+
