@@ -529,7 +529,11 @@ display.temperature(23)
 
 ### ESP32 board with 1.14" RGB ST7789V TFT display
 
-<img src="images/esp32_st7789v.jpg" width=600>
+<p float="left>
+  <img src="images/esp32_st7789v_3.jpg" width=200>
+  <img src="images/esp32_st7789v_1.jpg" width=200>
+  <img src="images/esp32_st7789v_2.jpg" width=200>
+</p>
 
 This module was sold on aliexpress as an ESP32-S3 (_T-Display T-PicoC3 ESP32 S3
 1,9 Zoll WiFi und Bluetooth-kompatibles Modul ESP32 C3 Entwicklungsboard 1,14
