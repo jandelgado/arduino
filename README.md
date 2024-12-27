@@ -535,12 +535,12 @@ display.temperature(23)
   <img src="images/esp32_st7789v_2.jpg" height=200>
 </p>
 
-This module was sold on aliexpress in different variantions as an ESP32-S3
-(_T-Display T-PicoC3 ESP32 S3 1,9 Zoll WiFi und Bluetooth-kompatibles Modul
-ESP32 C3 Entwicklungsboard 1,14 Zoll LCD für Arduino_). I ordered the ESP32-S3
+This module was sold on aliexpress in different variations as
+_T-Display T-PicoC3 ESP32 S3 1,9 Zoll WiFi und Bluetooth-kompatibles Modul
+ESP32 C3 Entwicklungsboard 1,14 Zoll LCD für Arduino_. I ordered the ESP32-S3
 version, but the one I got had an ESP32-D0WDQD6 and not an ESP32-S3, as
 advertised. According to the specs, the display is a 1.14" RGB TFT display with
-an ST7789V controller, connected by SPI, wired as follows:
+an ST7789V controller, connected through SPI and wired as follows:
 
 | Signal        | Pin |
 |-------------  |-----|
