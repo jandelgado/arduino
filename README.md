@@ -535,11 +535,12 @@ display.temperature(23)
   <img src="images/esp32_st7789v_2.jpg" height=200>
 </p>
 
-This module was sold on aliexpress as an ESP32-S3 (_T-Display T-PicoC3 ESP32 S3
-1,9 Zoll WiFi und Bluetooth-kompatibles Modul ESP32 C3 Entwicklungsboard 1,14
-Zoll LCD für Arduino_), but the one I got had an ESP32-D0WDQD6 and not an
-ESP32-S3, as advertised. According to the specs, the display is a 1.14" RGB TFT
-display with an ST7789V controller, connected by SPI, wired as follows:
+This module was sold on aliexpress in different variantions as an ESP32-S3
+(_T-Display T-PicoC3 ESP32 S3 1,9 Zoll WiFi und Bluetooth-kompatibles Modul
+ESP32 C3 Entwicklungsboard 1,14 Zoll LCD für Arduino_). I ordered the ESP32-S3
+version, but the one I got had an ESP32-D0WDQD6 and not an ESP32-S3, as
+advertised. According to the specs, the display is a 1.14" RGB TFT display with
+an ST7789V controller, connected by SPI, wired as follows:
 
 | Signal        | Pin |
 |-------------  |-----|
@@ -558,12 +559,11 @@ I tested 2 different libraries to control the TFT:
    revealed, that the lib is hardwired to a  resoultion of 240x320 pixels, resulting
    in a wrong geometry of displayed graphics
 2. [adafruit/Adafruit ST7735 and ST7789 Library](https://github.com/adafruit/Adafruit-ST7735-Library):
-   this lib finally worked, and I have adapted one of the original [demos here](esp32_st7789v/test.ino),
+   this lib worked, and I have adapted one of the original [demos here](esp32_st7789v/test.ino),
    with the proper configuration
 
-During development, I eventually found out, that `BL` stands for `BACKLIGHT`: the
-backlight must be turned on, otherwise the screen will stay black. For that, I
-added the following code:
+I eventually found out, that `BL` stands for `BACKLIGHT` and that the backlight
+must be turned on for obvious reasons.For that, I added the following code:
 
 ```c++
 ...
@@ -578,6 +578,8 @@ void setup() {
   ...
 }
 ```
+
+See this [sketch](esp32_st7789v/test.ino) for a working example.
 
 ## Misc
 
