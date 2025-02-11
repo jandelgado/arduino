@@ -589,14 +589,13 @@ See this [sketch](esp32_st7789v/test.ino) for a working example.
 </p>
 
 This board features the
-[ESP32-C3](https://www.espressif.com/en/products/socs/esp32-c3) which is based
-on a single core RISC-V CPU. This tiny board hosts a 0.42" OLED display,
-connected via I²C through GPIO 5 (SDA) and GPIO 6 (SCL). The Display has
-resolution of 72x40 pixels and runs out of the box using the u8g2 library using
-this `U8G2_SH1106_72X40_WISE_F_HW_I2C u8g2(U8G2_R0, U8X8_PIN_NONE)`
+[ESP32-C3](https://www.espressif.com/en/products/socs/esp32-c3), which is based
+on a single core RISC-V CPU. This tiny board also hosts a 0.42" OLED display,
+connected by I²C through GPIO 5 (SDA) and GPIO 6 (SCL). The Display has a
+resolution of 72x40 pixels, and runs out of the box using the u8g2 library using
+the `U8G2_SH1106_72X40_WISE_F_HW_I2C u8g2(U8G2_R0, U8X8_PIN_NONE)`
 constructor. The on-board LED is connected to GPIO 8 and low active. Look [here
 for a demo sketch](./esp32_c3_oled_0.42/esp32_c3_oled.ino).
-
 
 ## Misc
 
