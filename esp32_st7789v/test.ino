@@ -1,7 +1,7 @@
 /**************************************************************************
   Source: https://github.com/adafruit/Adafruit-ST7735-Library/blob/c7882bfd42adf196f34c7080c7206d2f0d6939da/examples/graphicstest/graphicstest.ino
   Minor changes (i.e. enable backlight and removal of unused code) for
-  ESP32 ST7789V 1.14" demo by Jan Delgado 12/2024.
+  ESP32 ST7789V 1.14" OLED demo by Jan Delgado 12/2024.
 
   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
   This is a library for several Adafruit displays based on ST77* drivers.
