@@ -1,7 +1,7 @@
 /**************************************************************************
   Source: https://github.com/adafruit/Adafruit-ST7735-Library/blob/c7882bfd42adf196f34c7080c7206d2f0d6939da/examples/graphicstest/graphicstest.ino
   Minor changes (i.e. enable backlight and removal of unused code) for
-  ESP32 ST7789V 1.14" OLED demo by Jan Delgado 12/2024.
+  ESP32-S3 ST7789V 1.9" 170x320 TFT demo by Jan Delgado 02/2026.
 
   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
   This is a library for several Adafruit displays based on ST77* drivers.
@@ -43,14 +43,19 @@
 #include <SPI.h>
 
 // using software SPI
-#define TFT_CS         5
-#define TFT_RST        23
-#define TFT_DC         16
-#define TFT_MOSI 19  // Data out
-#define TFT_SCLK 18  // Clock out
+#define TFT_CS         10
+#define TFT_RST        1
+#define TFT_DC         11
+#define TFT_MOSI 13  // Data out
+#define TFT_SCLK 12  // Clock out
+//#define WIDTH 135
+//#define HEIGHT 240
+
+#define WIDTH 170
+#define HEIGHT 320
 
 // JD: backlight
-#define BL 4
+#define BL 14
 
 Adafruit_ST7789 tft = Adafruit_ST7789(TFT_CS, TFT_DC, TFT_MOSI, TFT_SCLK, TFT_RST);
 
@@ -64,7 +69,7 @@ void setup(void) {
   pinMode(BL, OUTPUT);
   digitalWrite(BL, 1);
 
-  tft.init(135, 240);           // Init ST7789 240x135
+  tft.init(WIDTH, HEIGHT);
 
   Serial.println(F("Initialized"));
 
@@ -315,5 +320,4 @@ void mediabuttons() {
   // play color
   tft.fillTriangle(42, 20, 42, 60, 90, 40, ST77XX_GREEN);
 }
-
 
