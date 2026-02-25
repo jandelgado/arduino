@@ -617,7 +617,7 @@ for a demo sketch](./esp32_c3_oled_0.42/esp32_c3_oled.ino).
 Like before with the other ESP32-ST7789v board, backlight has to be turned on
 to actually see anything on the board.
 
-See this [sketch](esp32_s3_st7789v/test.ino) for a working example, using the Adafruit ST7789 library.
+See this [sketch](esp32_s3_st7889v/test.ino) for a working example, using the Adafruit ST7789 library.
 
 ## Misc
 
