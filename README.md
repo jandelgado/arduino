@@ -31,6 +31,7 @@ Notes on Arduino libraries and sketches and other related stuff.
   * [TM1637 based Display](#tm1637-based-display)
   * [ESP32 board with 1.14" RGB ST7789V TFT display](#esp32-board-with-114-rgb-st7789v-tft-display)
   * [ESP32-C3 with 0.42" I²C OLED display](#esp32-c3-with-042-ic-oled-display)
+  * [ESP32-S3 board with 1.9" RGB ST7789V SPI-TFT display (170x320)](#esp32-s3-board-with-19-rgb-st7789v-spi-tft-display-170x320)
 * [Misc](#misc)
   * [WS2812 protection circuit](#ws2812-protection-circuit)
 * [Author](#author)
@@ -596,6 +597,27 @@ resolution of 72x40 pixels, and runs out of the box using the u8g2 library using
 the `U8G2_SH1106_72X40_WISE_F_HW_I2C u8g2(U8G2_R0, U8X8_PIN_NONE)`
 constructor. The on-board LED is connected to GPIO 8 and low active. Look [here
 for a demo sketch](./esp32_c3_oled_0.42/esp32_c3_oled.ino).
+
+### ESP32-S3 board with 1.9" RGB ST7789V SPI-TFT display (170x320)
+
+<p float="left">
+  <img src="images/esp32_s3_st7789_1.jpg" height=200>
+  <img src="images/esp32_s3_st7789_2.jpg" height=200>
+</p>
+
+| Signal        | Pin |
+|-------------  |-----|
+| `MOSI`        | 13  |
+| `SCLK`        | 12  |
+| `DC`          | 11  |
+| `RST`         | 1   |
+| `CS`          | 10  |
+| `BL`          | 14  |
+
+Like before with the other ESP32-ST7789v board, backlight has to be turned on
+to actually see anything on the board.
+
+See this [sketch](esp32_s3_st7789v/test.ino) for a working example, using the Adafruit ST7789 library.
 
 ## Misc
 
