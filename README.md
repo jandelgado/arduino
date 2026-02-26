@@ -27,7 +27,7 @@ Notes on Arduino libraries and sketches and other related stuff.
   * [PCA9685 driver board](#pca9685-driver-board)
   * [MP3 Modules](#mp3-modules)
     * [VS1053 notes](#vs1053-notes)
-  * [Bosch BMP280](#bosch-bmp280)
+  * [Bosch BMP280 environmental sensor](#bosch-bmp280-environmental-sensor)
   * [TM1637 based Display](#tm1637-based-display)
   * [ESP32 board with 1.14" RGB ST7789V TFT display](#esp32-board-with-114-rgb-st7789v-tft-display)
   * [ESP32-C3 with 0.42" I²C OLED display](#esp32-c3-with-042-ic-oled-display)
@@ -351,6 +351,23 @@ and a [simple build script](https://github.com/jandelgado/jled/blob/4.7.0/exampl
 * [Look here for an example in my JLed library](https://github.com/jandelgado/jled/tree/4.7.0/examples/raspi_pico)
 * [official getting started guide](https://www.raspberrypi.org/documentation/pico/getting-started/)
 
+**Update:** with https://github.com/earlephilhower/arduino-pico there is an 
+Arduino SDK for the RP2040 and RP2350 available, which allows you to use
+the boards like any other board in the Arduino IDE. 
+Using https://github.com/maxgerhardt/platform-raspberrypi
+on top allows us to use the boards in PlatformIO with the Arduino SDK. Example
+from `platform.ini`:
+
+```
+[env:raspberrypi_pico]
+platform = https://github.com/maxgerhardt/platform-raspberrypi.git
+board = rpipico
+framework = arduino
+board_build.filesystem_size = 0.5m
+board_build.core = earlephilhower
+upload_protocol = picotool
+```
+
 ### PCA9685 driver board
 
 The PCA9685 is an **I2C bus** controlled LED/Servo controller **with 16
@@ -415,7 +432,9 @@ Summary:
 * The GPD2856A based boards are designed as stand alone players and are not
   meant to be controlled by a micro controller.
 * The DFPlayer Mini is a reliable board which can be controlled by a micro
-  controller. It has an amplifier built in as well as an equalizer.
+  controller. It has an amplifier built in as well as an equalizer. Note that
+  there are clones out there, that have compatibility issues. For more information
+  visit my [Carl music box site](https://github.com/jandelgado/carl?tab=readme-ov-file#note-on-dfplayer-mini-modules).
 * The VL1053 based shield supports many file formats and even recording of
   audio. It lacks an amplifier but is otherwise feature-packed.
 * The Catalex board is very simple to use and can be controlled by a micro
@@ -447,7 +466,7 @@ Libraries and examples:
 * https://github.com/adafruit/Adafruit_VS1053_Library
 * https://github.com/madsci1016/Sparkfun-MP3-Player-Shield-Arduino-Library
 
-### Bosch BMP280
+### Bosch BMP280 environmental sensor
 
 <img src="images/bmp280.png" width="500" alt="bmp280">
 
@@ -463,7 +482,7 @@ library (install on the Pico Pi with `circup adadfruit_bmp280`).
 
 In the example I connected the sensor as follows:
 
-| GY-BME/PM280 | Pico Pi Signal | Pin |
+| GY-BME/PM280 | Pico Pi Signal | GPIO |
 |--------------|----------------|-----|
 | VCC          | 3V3(OUT)       | 36  |
 | GND          | GND            | 23  |
@@ -511,7 +530,7 @@ at hand to test wether it was a software or a hardware problem.
 This is a 4 digit 7-segment display using a TM1637 driver, which uses a data
 and a clock line for connection to the MCU.
 
-| Display(TM1637) | Pico Pi Signal       | Pin |
+| Display(TM1637) | Pico Pi Signal       | GPIO |
 |-----------------|----------------------|-----|
 | CLK             | GP14                 | 19  |
 | DIO             | GP15                 | 20  |
@@ -544,7 +563,7 @@ version, but the one I got had an ESP32-D0WDQD6 and not an ESP32-S3, as
 advertised. According to the specs, the display is a 1.14" RGB TFT display with
 an ST7789V controller, connected through SPI and wired as follows:
 
-| Signal        | Pin |
+| Signal        | GPIO |
 |-------------  |-----|
 | `MOSI`        | 19  |
 | `SCLK`        | 18  |
@@ -605,7 +624,7 @@ for a demo sketch](./esp32_c3_oled_0.42/esp32_c3_oled.ino).
   <img src="images/esp32_s3_st7789_2.jpg" height=200>
 </p>
 
-| Signal        | Pin |
+| Signal        | GPIO |
 |-------------  |-----|
 | `MOSI`        | 13  |
 | `SCLK`        | 12  |
