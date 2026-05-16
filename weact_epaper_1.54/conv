@@ -1,0 +1,12 @@
+#!/bin/bash
+# convert image to 200x200 dither mono image for ePaper display
+#
+[ $# -ne 2 ] && { echo "usage: $0 <infile> <outfile>"; exit 1;}
+
+exec magick "${1}" \
+	  -unsharp 0x1 \
+	  -gravity north -crop 200x200+0+0 +repage \
+	  -colorspace Gray \
+	  -blur 0x0.3 \
+	  -dither FloydSteinberg -colors 2 \
+	  "${2}"

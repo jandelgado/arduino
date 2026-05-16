@@ -1,13 +1,156 @@
 {
   "lockfile_version": "1",
   "packages": {
+    "bin2c@latest": {
+      "last_modified": "2026-04-23T13:07:47Z",
+      "resolved": "github:NixOS/nixpkgs/01fbdeef22b76df85ea168fbfe1bfd9e63681b30#bin2c",
+      "source": "devbox-search",
+      "version": "0-unstable-2020-05-30",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/s5714gybrmhkb0by5kqiiqzww4gnkg9i-bin2c-0-unstable-2020-05-30",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/s5714gybrmhkb0by5kqiiqzww4gnkg9i-bin2c-0-unstable-2020-05-30"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/4dfcv1hv7i48f0gib2mdqlrdz90app2w-bin2c-0-unstable-2020-05-30",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/4dfcv1hv7i48f0gib2mdqlrdz90app2w-bin2c-0-unstable-2020-05-30"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/skksgdw47c0czagakml1w0hr7radcnj5-bin2c-0-unstable-2020-05-30",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/skksgdw47c0czagakml1w0hr7radcnj5-bin2c-0-unstable-2020-05-30"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/1jlx10sy41ml4dmphl6a71cfks23m67f-bin2c-0-unstable-2020-05-30",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/1jlx10sy41ml4dmphl6a71cfks23m67f-bin2c-0-unstable-2020-05-30"
+        }
+      }
+    },
     "github:NixOS/nixpkgs/nixpkgs-unstable": {
-      "last_modified": "2026-02-11T21:01:36Z",
-      "resolved": "github:NixOS/nixpkgs/2343bbb58f99267223bc2aac4fc9ea301a155a16?lastModified=1770843696&narHash=sha256-LovWTGDwXhkfCOmbgLVA10bvsi%2FP8eDDpRudgk68HA8%3D"
+      "last_modified": "2026-05-01T13:14:57Z",
+      "resolved": "github:NixOS/nixpkgs/c6d65881c5624c9cae5ea6cedef24699b0c0a4c0?lastModified=1777641297&narHash=sha256-WNGcmeOZ8Tr9dq6ztCspYbzWFswr2mPebM9LpsfGxPk%3D"
+    },
+    "imagemagick@7.1.2-19": {
+      "last_modified": "2026-04-30T11:26:30Z",
+      "resolved": "github:NixOS/nixpkgs/7aaa00e7cc9be6c316cb5f6617bd740dd435c59d#imagemagick",
+      "source": "devbox-search",
+      "version": "7.1.2-19",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/wpzigcx7gxjlwwp37zarhvd3bqa80b8c-imagemagick-7.1.2-19",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/5aqqkdj4f73paq3g2j4w4hzzr761ikxl-imagemagick-7.1.2-19-dev"
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/nbsq26ilsasp7q30yi1a0wg7gphas4yd-imagemagick-7.1.2-19-doc"
+            }
+          ],
+          "store_path": "/nix/store/wpzigcx7gxjlwwp37zarhvd3bqa80b8c-imagemagick-7.1.2-19"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/fwzsk0k739njgrc6akds0gb9dlf35c7j-imagemagick-7.1.2-19",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/cbix8xr3hapw0gxnb9frs03pmk4qwg03-imagemagick-7.1.2-19-dev"
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/0n8il9kwbiz0iv7v5i2lqgq0b74ysabl-imagemagick-7.1.2-19-doc"
+            }
+          ],
+          "store_path": "/nix/store/fwzsk0k739njgrc6akds0gb9dlf35c7j-imagemagick-7.1.2-19"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/gg9cl0mxb1imfdswpfizk5dj7zrxrwh6-imagemagick-7.1.2-19",
+              "default": true
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/8lbb1bszlsbva3j87k24vmgznd8lnfzr-imagemagick-7.1.2-19-doc"
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/lgixyf4qclp6bcm6z76ffpjmzlhvxa4l-imagemagick-7.1.2-19-dev"
+            }
+          ],
+          "store_path": "/nix/store/gg9cl0mxb1imfdswpfizk5dj7zrxrwh6-imagemagick-7.1.2-19"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/pjcg9z9zj4hqa7y8jjgsx06rc31q6r8s-imagemagick-7.1.2-19",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/hn59rqwq5j0z7l13yns903l6ibylwz1g-imagemagick-7.1.2-19-dev"
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/ynxxq1m4789p30i1g8qjlkm9lp80h9c0-imagemagick-7.1.2-19-doc"
+            }
+          ],
+          "store_path": "/nix/store/pjcg9z9zj4hqa7y8jjgsx06rc31q6r8s-imagemagick-7.1.2-19"
+        }
+      }
     },
     "python3Packages.pip": {
       "resolved": "github:NixOS/nixpkgs/2343bbb58f99267223bc2aac4fc9ea301a155a16?narHash=sha256-LovWTGDwXhkfCOmbgLVA10bvsi%2FP8eDDpRudgk68HA8%3D#python3Packages.pip",
-      "source": "nixpkg"
+      "source": "nixpkg",
+      "systems": {
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "man",
+              "path": "/nix/store/54ghr1cpaw5nzwjy9giiwpa455k1kd3f-python3.13-pip-25.3-man",
+              "default": true
+            },
+            {
+              "path": "/nix/store/kk4zk5aq3fi3vm7vfm0nl4m44jxiaa6a-python3.13-pip-25.3",
+              "default": true
+            }
+          ]
+        }
+      }
     },
     "python@3.13": {
       "last_modified": "2025-05-16T20:19:48Z",
@@ -65,6 +208,12 @@
           "store_path": "/nix/store/2mab9iiwhcqwk75qwvp3zv0bvbiaq6cs-python3-3.13.3"
         }
       }
+    },
+    "xxd@latest": {
+      "last_modified": "2023-02-24T09:01:09Z",
+      "resolved": "github:NixOS/nixpkgs/7d0ed7f2e5aea07ab22ccb338d27fbe347ed2f11#xxd",
+      "source": "devbox-search",
+      "version": "9.0.0609"
     }
   }
 }
