@@ -1,27 +1,31 @@
+---
 on:
   push:
-    branches:
-      - master
+    branches: [master]
   pull_request:
-    branches:
-      - master
-
-name: build examples
+    branches: [master]
+name: check-exif
 jobs:
-  build:
+  privacy-check:
     runs-on: ubuntu-latest
     steps:
-    - name: checkout code
-      uses: actions/checkout@v4
-
-    - name: install python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.13'
-
-    - name: install tools
-      run: |
-        pip install platformio==6.1.10
-
-    - name: build examples
-      run: make -C .common ci
+      - name: checkout code
+        uses: actions/checkout@v6
+      - name: install exiftool
+        run: sudo apt-get install -y libimage-exiftool-perl
+      - name: verify no privacy metadata in build output
+        run: bash .common/check-exif.sh ./
+  build-examples:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v6
+      - name: install python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.13'
+      - name: install tools
+        run: |
+          pip install platformio==6.1.19
+      - name: build examples
+        run: make -C .common ci

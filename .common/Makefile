@@ -20,9 +20,15 @@ monitor: phony
 tags: phony
 	ctags -R
 
-ci:
-	find .. -maxdepth 2 -not -path '\.\./\.common/*'  -name Makefile \
-		-exec sh -c 'make -C $$(dirname {})' \;
+ci: phony
+	set -e; \
+	find .. -maxdepth 2 \
+		-not -path '../.common/*' \
+		-name platformio.ini | \
+	while read -r ini; do \
+		make -C "$$(dirname "$$ini")"; \
+	done
+
 phony:
 
 

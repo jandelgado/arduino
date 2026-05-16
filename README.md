@@ -4,37 +4,38 @@ Notes on Arduino libraries and sketches and other related stuff.
 
 <!-- vim-markdown-toc GFM -->
 
-* [My Libraries and projects](#my-libraries-and-projects)
-  * [JLed](#jled)
-  * [log4arduino](#log4arduino)
-  * [eps32-aws-iot](#eps32-aws-iot)
-  * [USB Spinner Game Controller](#usb-spinner-game-controller)
-  * [Simpson Device (virtual Drinking Bird)](#simpson-device-virtual-drinking-bird)
-* [Sketches](#sketches)
-  * [Interfacing SSD1306 based OLED displays (SPI)](#interfacing-ssd1306-based-oled-displays-spi)
-  * [Colorduino RGB matrix driver](#colorduino-rgb-matrix-driver)
-  * [CJMCU-8x8 RGB matix](#cjmcu-8x8-rgb-matix)
-  * [WEMOS D-Duino](#wemos-d-duino)
-  * [ESP32 TTGO](#esp32-ttgo)
-  * [Heltec WiFi Lora 32](#heltec-wifi-lora-32)
-  * [Raspberry Pi 480x320 SPI TFT Display (3.5 inches)](#raspberry-pi-480x320-spi-tft-display-35-inches)
-    * [Further info](#further-info)
-  * [Sipeed Longan Nano RISC-V proto board (GD32VF103CBT6)](#sipeed-longan-nano-risc-v-proto-board-gd32vf103cbt6)
-    * [DFU mode](#dfu-mode)
-    * [Upload demo sketch](#upload-demo-sketch)
-  * [Raspberry Pi HDMI LCD display (800x480, 4")](#raspberry-pi-hdmi-lcd-display-800x480-4)
-  * [Raspberry Pi Pico (RP2040)](#raspberry-pi-pico-rp2040)
-  * [PCA9685 driver board](#pca9685-driver-board)
-  * [MP3 Modules](#mp3-modules)
-    * [VS1053 notes](#vs1053-notes)
-  * [Bosch BMP280 environmental sensor](#bosch-bmp280-environmental-sensor)
-  * [TM1637 based Display](#tm1637-based-display)
-  * [ESP32 board with 1.14" RGB ST7789V TFT display](#esp32-board-with-114-rgb-st7789v-tft-display)
-  * [ESP32-C3 with 0.42" I²C OLED display](#esp32-c3-with-042-ic-oled-display)
-  * [ESP32-S3 board with 1.9" RGB ST7789V SPI-TFT display (170x320)](#esp32-s3-board-with-19-rgb-st7789v-spi-tft-display-170x320)
-* [Misc](#misc)
-  * [WS2812 protection circuit](#ws2812-protection-circuit)
-* [Author](#author)
+- [My Libraries and projects](#my-libraries-and-projects)
+  - [JLed](#jled)
+  - [log4arduino](#log4arduino)
+  - [eps32-aws-iot](#eps32-aws-iot)
+  - [USB Spinner Game Controller](#usb-spinner-game-controller)
+  - [Simpson Device (virtual Drinking Bird)](#simpson-device-virtual-drinking-bird)
+- [Sketches](#sketches)
+  - [Interfacing SSD1306 based OLED displays (SPI)](#interfacing-ssd1306-based-oled-displays-spi)
+  - [Colorduino RGB matrix driver](#colorduino-rgb-matrix-driver)
+  - [CJMCU-8x8 RGB matix](#cjmcu-8x8-rgb-matix)
+  - [WEMOS D-Duino](#wemos-d-duino)
+  - [ESP32 TTGO](#esp32-ttgo)
+  - [Heltec WiFi Lora 32](#heltec-wifi-lora-32)
+  - [Raspberry Pi 480x320 SPI TFT Display (3.5 inches)](#raspberry-pi-480x320-spi-tft-display-35-inches)
+    - [Further info](#further-info)
+  - [Sipeed Longan Nano RISC-V proto board (GD32VF103CBT6)](#sipeed-longan-nano-risc-v-proto-board-gd32vf103cbt6)
+    - [DFU mode](#dfu-mode)
+    - [Upload demo sketch](#upload-demo-sketch)
+  - [Raspberry Pi HDMI LCD display (800x480, 4")](#raspberry-pi-hdmi-lcd-display-800x480-4)
+  - [Raspberry Pi Pico (RP2040)](#raspberry-pi-pico-rp2040)
+  - [PCA9685 driver board](#pca9685-driver-board)
+  - [MP3 Modules](#mp3-modules)
+    - [VS1053 notes](#vs1053-notes)
+  - [Bosch BMP280 environmental sensor](#bosch-bmp280-environmental-sensor)
+  - [TM1637 based Display](#tm1637-based-display)
+  - [ESP32 board with 1.14" RGB ST7789V TFT display](#esp32-board-with-114-rgb-st7789v-tft-display)
+  - [ESP32-C3 with 0.42" I²C OLED display](#esp32-c3-with-042-ic-oled-display)
+  - [ESP32-S3 board with 1.9" RGB ST7789V SPI-TFT display (170x320)](#esp32-s3-board-with-19-rgb-st7789v-spi-tft-display-170x320)
+  - [WeAct Studio 1.54" e-Ink display (with SSD1681 driver)](#weact-studio-154-e-ink-display-with-ssd1681-driver)
+- [Misc](#misc)
+  - [WS2812 protection circuit](#ws2812-protection-circuit)
+- [Author](#author)
 
 <!-- vim-markdown-toc -->
 
@@ -73,8 +74,8 @@ while True:
     led.update()
 ```
 
-* https://github.com/jandelgado/jled
-* https://github.com/jandelgado/jled-circuitpython
+- https://github.com/jandelgado/jled
+- https://github.com/jandelgado/jled-circuitpython
 
 ### log4arduino
 
@@ -94,28 +95,28 @@ available memory, e.g.
 42(1609): use printf formatting: 9 + 1 = 10
 ```
 
-* https://github.com/jandelgado/log4arduino
+- https://github.com/jandelgado/log4arduino
 
 ### eps32-aws-iot
 
 Code, tools and instructions on how to connect ESP32 securely to the AWS IOT
 cloud.
 
-* https://github.com/jandelgado/esp32-aws-iot
+- https://github.com/jandelgado/esp32-aws-iot
 
 ### USB Spinner Game Controller
 
 An Arduino Pro Micro based USB spinner (like a paddle) game controller. Great
 to play games like e.g. Arkanoid. Simulates an USB mouse and needs no drivers.
 
-* https://github.com/jandelgado/usb-spinner
+- https://github.com/jandelgado/usb-spinner
 
 ### Simpson Device (virtual Drinking Bird)
 
 Simulates an USB mouse using an Attiny85 (Digispark board) and randomly moves
 your mouse (see The Simpsons S07E07).
 
-* https://github.com/jandelgado/simpson-device
+- https://github.com/jandelgado/simpson-device
 
 ## Sketches
 
@@ -133,9 +134,8 @@ The following make targets can be used: run, envdump, clean, upload, monitor
 
 <img alt="ssd1306" width=256 src="images/ssd1306.jpg">
 
-* [ssd1306_sample_adafruit](ssd1306_sample_adafruit) - sample code for ssd1306 based oled display. see [wiki](http://github.com/jandelgado/arduino/wiki/SSD1306-based-OLED-connected-to-Arduino) for detailed information
-* [ssd1306_sample_u8g](ssd1306_sample_u8g) - sample code for ssd1306 based oled display. see [wiki](http://github.com/jandelgado/arduino/wiki/SSD1306-based-OLED-connected-to-Arduino) for detailed information
-
+- [ssd1306_sample_adafruit](ssd1306_sample_adafruit) - sample code for ssd1306 based oled display. see [wiki](http://github.com/jandelgado/arduino/wiki/SSD1306-based-OLED-connected-to-Arduino) for detailed information
+- [ssd1306_sample_u8g](ssd1306_sample_u8g) - sample code for ssd1306 based oled display. see [wiki](http://github.com/jandelgado/arduino/wiki/SSD1306-based-OLED-connected-to-Arduino) for detailed information
 
 ### Colorduino RGB matrix driver
 
@@ -143,8 +143,7 @@ Driver for 8x8 RGB LED matrix.
 
 <img alt="Colorduino" width=256 src="images/colorduino.JPG">
 
-* see [wiki](https://github.com/jandelgado/arduino/wiki/Colorduino) for detailed information
-
+- see [wiki](https://github.com/jandelgado/arduino/wiki/Colorduino) for detailed information
 
 ### CJMCU-8x8 RGB matix
 
@@ -152,8 +151,8 @@ An 8x8 LED RGB matrix based on WS2812 "NeoPixels".
 
 <img alt="CJMCU-8*8" width=256 src="images/cjmcu-8x8/cjmcu.jpg">
 
-* see [README of example sketch](cjmcu_8x8_sample/README.md) for detailed info
-rmation.
+- see [README of example sketch](cjmcu_8x8_sample/README.md) for detailed info
+  rmation.
 
 ### WEMOS D-Duino
 
@@ -162,9 +161,9 @@ connected via I2C.
 
 <img alt="wemos-d-duino" width=256 src="images/wemos-d-duino.png">
 
-* SSD1306 is connected with I2C and SCL connected to D2 and SDA connected
+- SSD1306 is connected with I2C and SCL connected to D2 and SDA connected
   to D1.
-* see [example sketch](wemos_d_duino) for an example on how to use it with
+- see [example sketch](wemos_d_duino) for an example on how to use it with
   the u8g2 library.
 
 ### ESP32 TTGO
@@ -178,10 +177,10 @@ switch.
   <img alt="esp32-ttgo-back" width=256 src="images/esp32-ttgo-back.png">
 </p>
 
-* SSD1306 is connected with I2C and SCL connected to GPIO4 and SDA connected
+- SSD1306 is connected with I2C and SCL connected to GPIO4 and SDA connected
   to GPIO5.
-* the builtin blue LED is connected to GPIO 16
-* see [example sketch](esp32_ttgo) for an example on how to use it with
+- the builtin blue LED is connected to GPIO 16
+- see [example sketch](esp32_ttgo) for an example on how to use it with
   the u8g2 library.
 
 ### Heltec WiFi Lora 32
@@ -191,10 +190,10 @@ transceiver.
 
 <img alt="heltec-wifi-lora-32" width=256 src="images/heltec.jpg">
 
-* the builtin LED is connected to `GPIO 25` (e.g. use `digitalWrite(25, 255)`)
-* OLED: u8glib configuration `U8X8_SSD1306_128X64_NONAME_SW_I2C u8x8(/* clock=*/ 15, /* data=*/ 4, /* reset=*/ 16);`
-* see [example sketch](heltec_wifi_lora32) for an example on how to use the OLED
-* TODO will add Lora example later ...
+- the builtin LED is connected to `GPIO 25` (e.g. use `digitalWrite(25, 255)`)
+- OLED: u8glib configuration `U8X8_SSD1306_128X64_NONAME_SW_I2C u8x8(/* clock=*/ 15, /* data=*/ 4, /* reset=*/ 16);`
+- see [example sketch](heltec_wifi_lora32) for an example on how to use the OLED
+- TODO will add Lora example later ...
 
 ### Raspberry Pi 480x320 SPI TFT Display (3.5 inches)
 
@@ -208,6 +207,7 @@ and uses an `ILI9486` controller. In raspian (tested with `2018-11-13 Raspian`).
 no additional drivers are needed. I got it running with the following configuration:
 
 Add to `/boot/config.txt`:
+
 ```
 dtparam=spi=on
 dtoverlay=piscreen,speed=16000000,rotate=270,fps=20
@@ -231,6 +231,7 @@ the driver was loaded (framebuffer and touchscreen):
 ```
 
 Test the display by loading an image using the `fbi` tool:
+
 ```
 $ sudo fbi -noverbose -T 1 -a -d /dev/fb1 image-test.gif
 ```
@@ -241,9 +242,9 @@ Start X11 on the framebuffer with `sudo FBDEV=/dev/fb1 startx`.
 
 #### Further info
 
-* http://ozzmaker.com/piscreen-driver-install-instructions-2/
-* [Adafruit info on FPS and SPI speed](https://learn.adafruit.com/adafruit-pitft-28-inch-resistive-touchscreen-display-raspberry-pi/help-faq#faq-11)
-* RPi case used: https://www.thingiverse.com/thing:1229473
+- http://ozzmaker.com/piscreen-driver-install-instructions-2/
+- [Adafruit info on FPS and SPI speed](https://learn.adafruit.com/adafruit-pitft-28-inch-resistive-touchscreen-display-raspberry-pi/help-faq#faq-11)
+- RPi case used: https://www.thingiverse.com/thing:1229473
 
 ### Sipeed Longan Nano RISC-V proto board (GD32VF103CBT6)
 
@@ -311,7 +312,7 @@ The display is labelled "4inch HDMI LCD". The resolution is 800x480 and the
 display has a built in XPT2046 touch controller.
 
 I had to power both the Raspi (RPi 3) and the display to get it run. The display
-needs a custom resolution in `/boot/config.txt`, which is set by  `hdmi_mode=87`
+needs a custom resolution in `/boot/config.txt`, which is set by `hdmi_mode=87`
 and `hdmi_cvt`.
 
 Add to `/boot/config.txt`:
@@ -348,12 +349,12 @@ things easier, I have created a [docker
 image](https://github.com/jandelgado/jled/blob/4.7.0/examples/raspi_pico/Dockerfile)
 and a [simple build script](https://github.com/jandelgado/jled/blob/4.7.0/examples/raspi_pico/build.sh).
 
-* [Look here for an example in my JLed library](https://github.com/jandelgado/jled/tree/4.7.0/examples/raspi_pico)
-* [official getting started guide](https://www.raspberrypi.org/documentation/pico/getting-started/)
+- [Look here for an example in my JLed library](https://github.com/jandelgado/jled/tree/4.7.0/examples/raspi_pico)
+- [official getting started guide](https://www.raspberrypi.org/documentation/pico/getting-started/)
 
-**Update:** with https://github.com/earlephilhower/arduino-pico there is an 
+**Update:** with https://github.com/earlephilhower/arduino-pico there is an
 Arduino SDK for the RP2040 and RP2350 available, which allows you to use
-the boards like any other board in the Arduino IDE. 
+the boards like any other board in the Arduino IDE.
 Using https://github.com/maxgerhardt/platform-raspberrypi
 on top allows us to use the boards in PlatformIO with the Arduino SDK. Example
 from `platform.ini`:
@@ -407,17 +408,17 @@ up using the DFPlayer Mini).
 ![MP3 Modules](images/mp3_modules.jpg)
 
 |                  | WTV020M01 V1.00                    | DFPlayer Mini                                          | Catalex Serial MP3 Player V1.0                              | VS1053 MP3 Shield (geeetech)                                                     | GPD2856A based                                      |
-|------------------|------------------------------------|--------------------------------------------------------|-------------------------------------------------------------|----------------------------------------------------------------------------------|-----------------------------------------------------|
+| ---------------- | ---------------------------------- | ------------------------------------------------------ | ----------------------------------------------------------- | -------------------------------------------------------------------------------- | --------------------------------------------------- |
 | Dimensions (mm)  | 22x17                              | 20x20                                                  | 40x23                                                       | 55x55                                                                            | 45x35, 22x34                                        |
 | VCC              | 3.3V                               | 3.2V-5V                                                | 3.2V-5.2V                                                   |                                                                                  | 3.7V-5V                                             |
 | Chip             | ?                                  | ?                                                      | YX5300                                                      | VLSI VS1053B                                                                     | GPOD2856A                                           |
 | Media            | Micro SD, 1 or 2GB, very picky     | Micro SD up to 32GB                                    | Micro SD up to GB                                           | Micro SD                                                                         |                                                     |
 | Filesystem       | FAT16/32                           | FAT16/32                                               | FAT16/32                                                    | FAT16/32                                                                         |                                                     |
-| Max Files        | 512                                | 100*255                                                | ?                                                           | ?                                                                                | ?                                                   |
+| Max Files        | 512                                | 100\*255                                               | ?                                                           | ?                                                                                | ?                                                   |
 | Formats          | AD4,NO MP3                         | MP3, WAV                                               | MP3, WAV                                                    | MP1, MP2, MP3, MP4, AAC, OGG, WAV and more                                       |                                                     |
 | Frequency        | 32kHz                              | 8-48kHz                                                | 11-48kHz                                                    |                                                                                  |                                                     |
 | Amplifier        | Yes                                | Yes                                                    | Line out only                                               |                                                                                  | 2W Mono                                             |
-| Buttons          | Opt.: Play, Prev, Next, Vol+, Vol- | Optional                                               | No                                                          |                                                                                  | Play,  Prev, Next, Vol+, Vol-                       |
+| Buttons          | Opt.: Play, Prev, Next, Vol+, Vol- | Optional                                               | No                                                          |                                                                                  | Play, Prev, Next, Vol+, Vol-                        |
 | Serial Interface | 2 Line + CLK                       | UART 9600bps                                           | UART 9600bps                                                |                                                                                  |                                                     |
 | Microphone       | No                                 | No                                                     | No                                                          | Record in OGG, WAV                                                               |                                                     |
 | Misc             | Busy signal, Reset input           | Busy signal, Equalizer                                 |                                                             |                                                                                  |                                                     |
@@ -427,27 +428,29 @@ up using the DFPlayer Mini).
 | Comment          | Better use DFPlayer Mini instead   | Small, reliable w/ Amplifier                           |                                                             | Many features, good documentation                                                | Standalone Player, w/ and wo/ buttons and terminals |
 
 Summary:
-* WTV020M01 is not recommended since not supporting MP3 format and very
+
+- WTV020M01 is not recommended since not supporting MP3 format and very
   restrictive regarding SD cards used and audio encoding
-* The GPD2856A based boards are designed as stand alone players and are not
+- The GPD2856A based boards are designed as stand alone players and are not
   meant to be controlled by a micro controller.
-* The DFPlayer Mini is a reliable board which can be controlled by a micro
+- The DFPlayer Mini is a reliable board which can be controlled by a micro
   controller. It has an amplifier built in as well as an equalizer. Note that
   there are clones out there, that have compatibility issues. For more information
   visit my [Carl music box site](https://github.com/jandelgado/carl?tab=readme-ov-file#note-on-dfplayer-mini-modules).
-* The VL1053 based shield supports many file formats and even recording of
+- The VL1053 based shield supports many file formats and even recording of
   audio. It lacks an amplifier but is otherwise feature-packed.
-* The Catalex board is very simple to use and can be controlled by a micro
+- The Catalex board is very simple to use and can be controlled by a micro
   controller. It lacks an amplifier and offers only a serial interface for
   control.
 
 Addiontial links:
-* DFPlayerMini: https://wiki.dfrobot.com/DFPlayer_Mini_SKU_DFR0299
-* Catalex: http://geekmatic.in.ua/pdf/Catalex_MP3_board.pdf
-* GPD2856A: https://www.petervis.com/Electronics_Kits/gpd2856a/gpd2856a-mp3-decoder-board.html
-* WTV020M01: https://hackaday.io/project/3508-portable-trollmaster-3000/log/12391-the-joy-of-using-an-underdocumented-module-and-using-a-plan-b-at-the-last-minute
-* Geeetch VS1053: http://www.geeetech.com/wiki/index.php/Arduino_MP3_shield_board_with_TF_card
-    * Profiles for the VS1053: http://www.vlsi.fi/en/support/software/vs10xxapplications.html
+
+- DFPlayerMini: https://wiki.dfrobot.com/DFPlayer_Mini_SKU_DFR0299
+- Catalex: http://geekmatic.in.ua/pdf/Catalex_MP3_board.pdf
+- GPD2856A: https://www.petervis.com/Electronics_Kits/gpd2856a/gpd2856a-mp3-decoder-board.html
+- WTV020M01: https://hackaday.io/project/3508-portable-trollmaster-3000/log/12391-the-joy-of-using-an-underdocumented-module-and-using-a-plan-b-at-the-last-minute
+- Geeetch VS1053: http://www.geeetech.com/wiki/index.php/Arduino_MP3_shield_board_with_TF_card
+  - Profiles for the VS1053: http://www.vlsi.fi/en/support/software/vs10xxapplications.html
 
 #### VS1053 notes
 
@@ -458,13 +461,14 @@ VLSI](http://www.vlsi.fi/fileadmin/software/VS10XX/vs1053-vorbis-encoder-170c.zi
 Pick yours from the `profiles/` directory (files with `.img` extension). The
 name of the plugin is passed to the `prepareRecordingOgg` function. I had to
 change the name to conform to 8.3 naming (e.g. `v08k1q06.img`), otherwise the
-plugin did not load.  Refer to the
+plugin did not load. Refer to the
 [documentation](http://www.vlsi.fi/fileadmin/software/VS10XX/VorbisEncoder170c.pdf)
 for more details.
 
 Libraries and examples:
-* https://github.com/adafruit/Adafruit_VS1053_Library
-* https://github.com/madsci1016/Sparkfun-MP3-Player-Shield-Arduino-Library
+
+- https://github.com/adafruit/Adafruit_VS1053_Library
+- https://github.com/madsci1016/Sparkfun-MP3-Player-Shield-Arduino-Library
 
 ### Bosch BMP280 environmental sensor
 
@@ -473,7 +477,7 @@ Libraries and examples:
 The [Bosch
 BMP280](https://www.bosch-sensortec.com/products/environmental-sensors/pressure-sensors/bmp280/)
 is an environmental sensor, capable of measuring temperature and barometric air
-Pressure. The sensor supports both I²C and SPI.  There are many different
+Pressure. The sensor supports both I²C and SPI. There are many different
 boards available, mine is labeled `GY-BME/PM280` and costs about 1.60€
 (02/2023). I successfully connected it using I²C and CircuitPython, running on
 an Raspberry Pi Pico W using the
@@ -483,11 +487,11 @@ library (install on the Pico Pi with `circup adadfruit_bmp280`).
 In the example I connected the sensor as follows:
 
 | GY-BME/PM280 | Pico Pi Signal | GPIO |
-|--------------|----------------|-----|
-| VCC          | 3V3(OUT)       | 36  |
-| GND          | GND            | 23  |
-| SCL          | GP17/I2C0SCL   | 22  |
-| SDA          | GP16/I2C0SDA   | 21  |
+| ------------ | -------------- | ---- |
+| VCC          | 3V3(OUT)       | 36   |
+| GND          | GND            | 23   |
+| SCL          | GP17/I2C0SCL   | 22   |
+| SDA          | GP16/I2C0SDA   | 21   |
 
 Running an I²C bus scan in the CircuitPython REPL reveals that the device is
 has address 0x76 (118):
@@ -504,7 +508,6 @@ True
 
 This is important, since the Adafruit library defaults to 119. Reading values
 from the sensor is straight forward:
-
 
 ```python
 # CircuitPython example
@@ -531,11 +534,11 @@ This is a 4 digit 7-segment display using a TM1637 driver, which uses a data
 and a clock line for connection to the MCU.
 
 | Display(TM1637) | Pico Pi Signal       | GPIO |
-|-----------------|----------------------|-----|
-| CLK             | GP14                 | 19  |
-| DIO             | GP15                 | 20  |
-| VCC             | 3V3(OUT) or VBUS(5V) | 36  |
-| GND             | GND                  | 18  |
+| --------------- | -------------------- | ---- |
+| CLK             | GP14                 | 19   |
+| DIO             | GP15                 | 20   |
+| VCC             | 3V3(OUT) or VBUS(5V) | 36   |
+| GND             | GND                  | 18   |
 
 ```python
 # CircuitPython example using https://github.com/bablokb/circuitpython-tm1637
@@ -563,28 +566,28 @@ version, but the one I got had an ESP32-D0WDQD6 and not an ESP32-S3, as
 advertised. According to the specs, the display is a 1.14" RGB TFT display with
 an ST7789V controller, connected through SPI and wired as follows:
 
-| Signal        | GPIO |
-|-------------  |-----|
-| `MOSI`        | 19  |
-| `SCLK`        | 18  |
-| `CS`          | 5   |
-| `DC`          | 16  |
-| `RST`         | 23  |
-| `BL`          | 4   |
+| Signal | GPIO |
+| ------ | ---- |
+| `MOSI` | 19   |
+| `SCLK` | 18   |
+| `CS`   | 5    |
+| `DC`   | 16   |
+| `RST`  | 23   |
+| `BL`   | 4    |
 
 I tested 2 different libraries to control the TFT:
 
 1. [deirvlon/ST7789v-Arduino](https://github.com/deirvlon/ST7789v-Arduino):
    while I had initially success in getting displayed at least anything,
    further inspection of the [code](https://github.com/deirvlon/ST7789v-Arduino/blob/main/ST7789v_arduino.cpp#L545)
-   revealed, that the lib is hardwired to a  resoultion of 240x320 pixels, resulting
+   revealed, that the lib is hardwired to a resoultion of 240x320 pixels, resulting
    in a wrong geometry of displayed graphics
 2. [adafruit/Adafruit ST7735 and ST7789 Library](https://github.com/adafruit/Adafruit-ST7735-Library):
    this lib worked, and I have adapted one of the original [demos here](esp32_st7789v/test.ino),
    with the proper configuration
 
-I eventually found out, that `BL` stands for `BACKLIGHT` and that the backlight
-must be turned on for obvious reasons.For that, I added the following code:
+I eventually found out that `BL` stands for `BACKLIGHT` and that the backlight
+must be turned on, for obvious reasons. For that, I added the following code:
 
 ```c++
 ...
@@ -624,19 +627,46 @@ for a demo sketch](./esp32_c3_oled_0.42/esp32_c3_oled.ino).
   <img src="images/esp32_s3_st7789_2.jpg" height=200>
 </p>
 
-| Signal        | GPIO |
-|-------------  |-----|
-| `MOSI`        | 13  |
-| `SCLK`        | 12  |
-| `DC`          | 11  |
-| `RST`         | 1   |
-| `CS`          | 10  |
-| `BL`          | 14  |
+| Signal | GPIO |
+| ------ | ---- |
+| `MOSI` | 13   |
+| `SCLK` | 12   |
+| `DC`   | 11   |
+| `RST`  | 1    |
+| `CS`   | 10   |
+| `BL`   | 14   |
 
 Like before with the other ESP32-ST7789v board, backlight has to be turned on
 to actually see anything on the board.
 
 See this [sketch](esp32_s3_st7889v/test.ino) for a working example, using the Adafruit ST7789 library.
+
+### WeAct Studio 1.54" e-Ink display (with SSD1681 driver)
+
+<p float="left">
+  <img src="images/weact_epaper_1.54/epaper_mm.jpg" height=200>
+  <img src="images/weact_epaper_1.54/epaper_back.jpg" height=200>
+</p>
+
+This tiny e-Ink display with 200x200 pixel resolution is connected to a micro controller using a
+4-line SPI connection. The display is compatible to comparable WaveShare devices. I tested it with
+an ESP32 and it worked out of the box with the [GxEPD2 driver](https://github.com/ZinggJM/GxEPD2).
+Here is my modiyfied [example sketch](weact_epaper_1.54/epaper.ino) I adapted the example from
+[here](https://github.com/WeActStudio/WeActStudio.EpaperModule/blob/002dccc50d67d472476c7e66fdfa63f26d8580ab/Example/EpaperModuleTest_Arduino_ESP32/EpaperModuleTest_Arduino_ESP32.ino).
+The example assumes this wiring:
+
+| Signal | GPIO   | Function                               |
+| ------ | ------ | -------------------------------------- |
+| `BUSY` | 4      | Busy Status Output                     |
+| `RES`  | 16     | Reset                                  |
+| `D/C`  | 17     | SPI Data/Command Select                |
+| `CS`   | 5      | SPI Chip Select                        |
+| `SCL`  | 18     | SPI Serial Clock (aka `SCK`)           |
+| `SDA`  | 23     | SPI Master Out / Slave In (aka `MOSI`) |
+| `GND`  | `GND`  | Ground                                 |
+| `VCC`  | `3.3V` | VCC                                    |
+
+In my blog I've also described [how this display can be used with CircuitPython](https://jandelgado.github.io/blog/blog/circuitpython-on-an-old-esp32/)
 
 ## Misc
 
@@ -649,4 +679,3 @@ I use this circuit when I connect WS2812 "neo pixels" to micro controllers (conn
 ## Author
 
 (c) Copyright 2018-2021 by Jan Delgado. License: MIT
-

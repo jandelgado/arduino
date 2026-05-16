@@ -5,11 +5,17 @@ src_dir = .
 ; no longer works an platformio does not support arduino framework
 ; for the sipeed-longan-nano using the nuclei sdk.
 [env:sipeed_longan_nano]
-platform = gd32v
-board =  sipeed-longan-nano
-board_build.mcu = GD32VF103CBT6
-platform_packages = framework-arduino-gd32v @ https://github.com/sipeed/Longduino.git
-framework = arduino
+platform = nuclei
+board = gd32vf103c_longan_nano
+framework = nuclei-sdk
+
+# no longer supported with newer platiformio versions
+#platform = gd32v
+#board =  sipeed-longan-nano
+#board_build.mcu = GD32VF103CBT6
+#platform_packages = framework-arduino-gd32v @ https://github.com/sipeed/Longduino.git
+#framework = arduino
+#
 upload_protocol = dfu
 #lib_deps=jled
 

@@ -1,7 +1,10 @@
 {
   "packages": [
     "python@3.13",
-    "python3Packages.pip"
+    "python3Packages.pip",
+    "imagemagick@7.1.2-19",
+    "xxd@latest",
+    "bin2c@latest"
   ],
   "shell": {
     "init_hook": [
